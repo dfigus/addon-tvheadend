@@ -11,4 +11,4 @@ bashio::log.info "Starting TVHeadend..."
 args=$(bashio::config 'args')
 bashio::log.info "Additional args ${args}"
 
-exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend "$args" 
+exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend $args
