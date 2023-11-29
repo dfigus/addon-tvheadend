@@ -13,6 +13,7 @@ arch:
   - armv7
   - i386
 webui: "http://[HOST]:[PORT:9981]/"
+host_network: true
 devices:
   - /dev/dvb
   - /dev/dri
