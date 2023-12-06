@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Start nginx
+# ==============================================================================
+
+bashio::log.info "Starting nginx..."
+
+nginx -g "daemon off;"
