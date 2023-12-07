@@ -5,6 +5,9 @@ stage: experimental
 slug: tvheadend
 description: TV streaming server and recorder.
 url: "https://github.com/dfigus/addon-tvheadend"
+ingress: true
+ingress_stream: true
+ingress_port: 80
 init: false
 arch:
   - aarch64
@@ -12,7 +15,7 @@ arch:
   - armhf
   - armv7
   - i386
-webui: "http://[HOST]:[PORT:9981]/"
+#webui: "http://[HOST]:[PORT:9981]/"
 host_network: true
 devices:
   - /dev/dvb
