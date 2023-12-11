@@ -9,6 +9,7 @@ ingress: true
 ingress_stream: true
 ingress_port: 80
 init: false
+panel_icon: mdi:television
 arch:
   - aarch64
   - amd64
