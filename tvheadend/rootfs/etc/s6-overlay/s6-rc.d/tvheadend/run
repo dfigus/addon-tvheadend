@@ -14,4 +14,4 @@ bashio::log.info "Additional args ${args}"
 ingress_path=$(bashio::addon.ingress_entry)
 bashio::log.info "Ingress path used as tvheadend http_root:  ${ingress_path}"
 
-exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend --http_root $ingress_path $args
+exec /usr/bin/tvheadend --firstrun -u root -g root -c /config/tvheadend --http_root $ingress_path $args
