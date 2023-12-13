@@ -11,6 +11,10 @@ ARG TZ="Etc/UTC"
 ARG TVHEADEND_COMMIT
 ENV HOME="/config"
 
+COPY argtable2_config/ /tmp/argtable2_config/
+
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
@@ -67,7 +71,7 @@ RUN \
     /tmp/tvheadend && \
     git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
     cd /tmp/tvheadend && \
-    git checkout ${TVHEADEND_COMMIT} && \
+    git checkout "${TVHEADEND_COMMIT}" && \
     ./configure \
     `#Encoding` \
     --disable-ffmpeg_static \
@@ -116,7 +120,7 @@ RUN \
     tar xf \
     /tmp/argtable-src.tar.gz -C \
     /tmp/argtable --strip-components=1 && \
-    #    cp /tmp/patches/config.* /tmp/argtable && \
+    cp /tmp/argtable2_config/config.* /tmp/argtable && \
     cd /tmp/argtable && \
     ./configure \
     --prefix=/usr && \
