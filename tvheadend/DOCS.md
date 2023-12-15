@@ -56,7 +56,7 @@ every single time this add-on starts.
 ### Option: `args`
 
 Additional startup arguments to be passed to TVHeadend. A list of command line
-arguments can be found [here][https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md].
+arguments can be found [here](https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md).
 The addon itself will use the following arguments, hence do not use them:
 
 - `-C, --firstrun`: To create the initial access control entry
