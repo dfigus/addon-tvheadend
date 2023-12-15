@@ -63,7 +63,7 @@ The addon itself will use the following arguments, hence do not use them:
 - `--http-root`: This will be set to the HA `ingress_path` to enable the HA Ingress feature
 
 If you use a Fritz!Box with integrated DVC-C tuners, you might want to use the
-`--satip_xml  http://<your Fritz!BoxIP:49000/satipdesc.xml` argument.
+`--satip_xml  http://<your Fritz!BoxIP>:49000/satipdesc.xml` argument.
 
 ## Additional Details
 
