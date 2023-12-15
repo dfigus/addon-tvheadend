@@ -54,7 +54,7 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-This repository was intially cloned from [GauthamVarmaK][gautham]. As the original 
+This repository was intially cloned from [GauthamVarmaK][gautham]. As the original
 [gautham/addon-tvheaded] is no longer maintained, I ([Daniel Figus][dfigus]) took
 it over.
 

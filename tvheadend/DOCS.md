@@ -58,10 +58,11 @@ every single time this add-on starts.
 Additional startup arguments to be passed to TVHeadend. A list of command line
 arguments can be found [here][https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md].
 The addon itself will use the following arguments, hence do not use them:
+
 - `-C, --firstrun`: To create the initial access control entry
 - `--http-root`: This will be set to the HA `ingress_path` to enable the HA Ingress feature
 
-If you use a Fritz!Box with integrated DVC-C tuners, you might want to use the 
+If you use a Fritz!Box with integrated DVC-C tuners, you might want to use the
 `--satip_xml  http://<your Fritz!BoxIP:49000/satipdesc.xml` argument.
 
 ## Additional Details
