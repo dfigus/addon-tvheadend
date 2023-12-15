@@ -15,7 +15,7 @@ on:
 jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
-    inputs:
+    with:
       repository: "hassio-addons"
       repository_edge: "hassio-addons-edge"
       repository_beta: "hassio-addons-beta"
