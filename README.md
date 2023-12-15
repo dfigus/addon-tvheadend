@@ -54,7 +54,9 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-This repository is owned and maintained by [GauthamVarmaK][gautham].
+This repository was intially cloned from [GauthamVarmaK][gautham]. As the original
+[gautham/addon-tvheaded] is no longer maintained, I ([Daniel Figus][dfigus]) took
+it over.
 
 This has been possible thanks to the community add-ons initiative by [Frenck]
 
@@ -65,7 +67,7 @@ check [the contributor's page][contributors].
 
 MIT License
 
-Copyright (c) 2021-2023 GauthamVarmaK
+Copyright (c) 2023-2024 Daniel Figus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -85,24 +87,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[contributors]: https://github.com/GauthamVarmaK/addon-tvheadend/graphs/contributors
-[docs]: https://github.com/GauthamVarmaK/addon-tvheadend/blob/main/tvheadend/DOCS.md
+[contributors]: https://github.com/dfigus/addon-tvheadend/graphs/contributors
+[docs]: https://github.com/dfigus/addon-tvheadend/blob/main/tvheadend/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/
-[gautham]: https://github.com/GauthamVarmaK
+[dfigus]: https://github.com/dfigus
 [frenck]: https://github.com/frenck
 [github-actions-shield]: https://github.com/GauthamVarmaK/addon-tvheadend/workflows/CI/badge.svg
 [github-actions]: https://github.com/GauthamVarmaK/addon-tvheadend/actions
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/GauthamVarmaK/addon-tvheadend/issues
-[license-shield]: https://img.shields.io/github/license/GauthamVarmaK/addon-tvheadend.svg
+[issue]: https://github.com/dfigus/addon-tvheadend/issues
+[license-shield]: https://img.shields.io/github/license/dfigus/addon-tvheadend.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[releases-shield]: https://img.shields.io/github/release/GauthamVarmaK/addon-tvheadend.svg
-[releases]: https://github.com/GauthamVarmaK/addon-tvheadend/releases
+[releases-shield]: https://img.shields.io/github/release/dfigus/addon-tvheadend.svg
+[releases]: https://github.com/dfigus/addon-tvheadend/releases
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/GauthamVarmaK/addon-tvheadend.svg
-[commits]: https://github.com/GauthamVarmaK/addon-tvheadend/commits/main
+[commits-shield]: https://img.shields.io/github/commit-activity/y/dfigus/addon-tvheadend.svg
+[commits]: https://github.com/dfigus/addon-tvheadend/commits/main
