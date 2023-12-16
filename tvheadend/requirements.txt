@@ -1,2 +1,2 @@
 setuptools==69.0.2
-streamlink==6.4.2
+streamlink==6.5.0
