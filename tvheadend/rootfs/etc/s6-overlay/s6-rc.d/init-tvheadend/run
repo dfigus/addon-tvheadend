@@ -25,7 +25,7 @@ webgrabplus_install(){
             && wget http://webgrabplus.com/sites/default/files/download/ini/SiteIniPack_current.zip \
             && unzip SiteIniPack_current.zip \
             && rm SiteIniPack_current.zip \
-            && cp siteini.pack/India/* siteini.user/ \
+            && cp siteini.pack/Germany/* siteini.user/ \
             && wget -O /usr/bin/tv_grab_wg++ http://www.webgrabplus.com/sites/default/files/tv_grab_wg.txt \
             && sed -i 's|~/.wg++/guide.xml|/config/tvheadend/wg++/guide.xml|g' /usr/bin/tv_grab_wg++ \
             && chmod a+x /usr/bin/tv_grab_wg++
@@ -45,8 +45,15 @@ webgrabplus_install(){
 # Ensure directory exists
 if ! bashio::fs.directory_exists '/config/tvheadend/'; then
     bashio::log.info "Creating default configuration directory at /config/tvheadend/"
-    mkdir -p /config/tvheadend/recordings
+    mkdir /config/tvheadend
+    bashio::log.info "Creating default recordings directory at /share/tvheadend/recordings"
+    mkdir -p /share/tvheadend/recordings
+
     timeout 20s /usr/bin/tvheadend --firstrun -u root -g root -c /config/tvheadend
+
+    bashio::log.info "Updating default DVR config with recordings folder and UTF-8 encoding"
+    find /config/tvheadend/dvr/config/ -type f -exec bash -c 'jq '\''.storage="/share/tvheadend/recordings" | .charset="UTF-8"'\'' "$1" > /tmp/tmp.json && mv /tmp/tmp.json "$1"' shell {} \; -quit
+
 fi
 
 if check_webgrabplus; then

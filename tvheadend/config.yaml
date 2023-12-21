@@ -27,7 +27,8 @@ ports_description:
   9981/tcp: TVH Web Interface
   9982/tcp: TVH HTSP
 map:
-  - "addon_config:rw"
+  - addon_config:rw
+  - share:rw
 options:
   system_packages: []
   init_commands: []
