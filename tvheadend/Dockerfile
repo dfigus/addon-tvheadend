@@ -8,7 +8,7 @@ ARG ARGTABLE_VER="2.13"
 
 # environment settings
 ARG TZ="Etc/UTC"
-ARG TVHEADEND_COMMIT
+ARG TVHEADEND_COMMIT="4825b8414fc276ee74e9d0c3ebf5eaf09825d6b6"
 ENV HOME="/config"
 
 COPY argtable2_config/ /tmp/argtable2_config/
