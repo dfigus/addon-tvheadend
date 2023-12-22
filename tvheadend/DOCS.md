@@ -67,12 +67,10 @@ If you use a Fritz!Box with integrated DVC-C tuners, you might want to use the
 
 ## Additional Details
 
-- Config files are stored in `/config/tvheadend/`
-- Recording files are stored in `/config/tvheadend/recordings/`
+- Config files are stored in `/config/tvheadend/` and will be backed up
+- Recording files are stored in `/share/tvheadend/recordings/` and will NOT be backed up!
 - `/dev/dvb/`, `/dev/dri/` would be respectively mapped to
   `/dev/dvb/`, `/dev/dri/` inside the addon.
-
-Consider, backing `/config/tvheadend/` up whenever migrating.
 
 ## Changelog & Releases
 
