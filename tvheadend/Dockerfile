@@ -151,48 +151,48 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-    musl-dev=1.2.4-r2 \
-    gcc=12.2.1_git20220924-r10 \
-    g++=12.2.1_git20220924-r10 \
+    musl-dev=1.2.4_git20230717-r4 \
+    gcc=13.2.1_git20231014-r0 \
+    g++=13.2.1_git20231014-r0 \
     libxml2-dev=2.11.6-r0 \
-    libxslt-dev=1.1.38-r0 \
-    python3-dev=3.11.6-r0 \
+    libxslt-dev=1.1.39-r0 \
+    python3-dev=3.11.6-r1 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r5 \
-    ffmpeg=6.0.1-r0 \
-    ffmpeg4-libavcodec=4.4.4-r1 \
-    ffmpeg4-libavdevice=4.4.4-r1 \
-    ffmpeg4-libavfilter=4.4.4-r1 \
-    ffmpeg4-libavformat=4.4.4-r1 \
-    ffmpeg4-libavutil=4.4.4-r1 \
-    ffmpeg4-libpostproc=4.4.4-r1 \
-    ffmpeg4-libswresample=4.4.4-r1 \
-    ffmpeg4-libswscale=4.4.4-r1 \
-    gnu-libiconv=1.17-r1 \
+    ffmpeg=6.1-r1 \
+    ffmpeg4-libavcodec=4.4.4-r5 \
+    ffmpeg4-libavdevice=4.4.4-r5 \
+    ffmpeg4-libavfilter=4.4.4-r5 \
+    ffmpeg4-libavformat=4.4.4-r5 \
+    ffmpeg4-libavutil=4.4.4-r5 \
+    ffmpeg4-libpostproc=4.4.4-r5 \
+    ffmpeg4-libswresample=4.4.4-r5 \
+    ffmpeg4-libswscale=4.4.4-r5 \
+    gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
     libhdhomerun-libs=20200225-r1 \
-    libva=2.18.0-r1 \
-    libvpx=1.13.0-r2 \
-    libxml2=2.11.6-r0	 \
-    libxslt=1.1.38-r0 \
-    linux-headers=6.3-r0 \
-    mesa-va-gallium=23.0.4-r0 \
+    libva=2.20.0-r0 \
+    libvpx=1.13.1-r0 \
+    libxml2=2.11.6-r0 \
+    libxslt=1.1.39-r0 \
+    linux-headers=6.5-r0 \
+#    mesa-va-gallium=23.3.1-r0 \ AMD Driver not required
     opus=1.4-r0	 \
-    pcre2=10.42-r1	 \
-    perl=5.36.2-r0	 \
-    perl-datetime-format-strptime=1.79-r0 \
-    perl-json=4.10-r0 \
-    perl-json-xs=4.03-r2 \
-    py3-requests=2.31.0-r0 \
-    python3=3.11.6-r0 \
+    pcre2=10.42-r2	 \
+    perl=5.38.2-r0	 \
+    perl-datetime-format-strptime=1.79-r1 \
+    perl-json=4.10-r1 \
+    perl-json-xs=4.03-r3 \
+    py3-requests=2.31.0-r1 \
+    python3=3.11.6-r1 \
     uriparser=0.9.7-r0 \
-    x264=0.164_git20220602-r1 \
+    x264=0.164_git20231001-r0 \
     x265=3.5-r4 \
-    xmltv=1.2.1-r3 \
-    zlib=1.2.13-r1 \
-    py3-pip=23.1.2-r0 \
-    libxslt=1.1.38-r0 \
-    nginx=1.24.0-r7\
+    xmltv=1.2.1-r4 \
+    zlib=1.3-r2 \
+    py3-pip=23.3.1-r0 \
+    libxslt=1.1.39-r0 \
+    nginx=1.24.0-r14 \
     && pip3 install \
     --no-cache-dir \
     --prefer-binary \
