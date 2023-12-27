@@ -24,12 +24,25 @@
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
       "depNameTemplate": "alpine_3_19/{{package}}"
+    },
+    {
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": ["TVHEADEND_COMMIT=(?<currentDigest>.*?)\\n"],
+      "currentValueTemplate": "master",
+      "depNameTemplate": "tvheadend",
+      "packageNameTemplate": "https://github.com/tvheadend/tvheadend/",
+      "datasourceTemplate": "git-refs"
     }
   ],
   "packageRules": [
     {
+      "matchDepNames": ["tvheadend"],
+      "automerge": false
+    },
+    {
       "matchDatasources": ["repology"],
-      "automerge": true
+      "automerge": false
     },
     {
       "groupName": "Add-on base image",
@@ -39,7 +52,7 @@
       "groupName": "Add-on base image",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "automerge": false
     },
     {
       "matchManagers": ["pip_requirements"],
@@ -49,25 +62,19 @@
     {
       "matchManagers": ["pip_requirements"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "automerge": false
     },
     {
       "groupName": "Docker",
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/docker.*$"],
-      "automerge": true
-    },
-    {
-      "groupName": "OpenSSL",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
-      "automerge": true
+      "automerge": false
     },
     {
       "groupName": "Python",
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
-      "automerge": true
+      "automerge": false
     }
   ]
 }
