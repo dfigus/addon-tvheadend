@@ -33,6 +33,13 @@
       "depNameTemplate": "tvheadend",
       "packageNameTemplate": "https://github.com/tvheadend/tvheadend/",
       "datasourceTemplate": "git-refs"
+    },
+    {
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentDigest>.*?)\"\\n"],
+      "depNameTemplate": "picons/picons",
+      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [
