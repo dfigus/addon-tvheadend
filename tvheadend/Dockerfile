@@ -205,6 +205,7 @@ COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
 COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN \
   mkdir -p /picons/tmp \
