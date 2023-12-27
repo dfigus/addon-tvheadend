@@ -48,6 +48,10 @@
       "automerge": false
     },
     {
+      "matchDatasources": ["github-releases"],
+      "automerge": false
+    },
+    {
       "matchDatasources": ["repology"],
       "automerge": false
     },
