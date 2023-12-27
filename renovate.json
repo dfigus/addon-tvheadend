@@ -37,7 +37,7 @@
     {
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentDigest>.*?)\"\\n"],
+      "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"],
       "depNameTemplate": "picons/picons",
       "datasourceTemplate": "github-releases"
     }
