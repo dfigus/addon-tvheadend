@@ -146,6 +146,8 @@ RUN \
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+ARG PICONS_RELEASE="2023-12-16--05-47-38"
+
 COPY requirements.txt /tmp/
 
 RUN \
@@ -202,6 +204,19 @@ RUN \
 COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
 COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
+
+
+RUN \
+  mkdir -p /picons/tmp \
+  && curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/picons/picons/releases/tags/"${PICONS_RELEASE}" > /picons/tmp/release.json \
+  && jq -r '.assets[] | select(.name | test("^snp-full\\.220x132-190x102\\.light\\.on\\.transparent.*symlink\\.tar\\.xz$")) | .browser_download_url' /picons/tmp/release.json | xargs wget -O /picons/tmp/snp.tar.xz \
+  && jq -r '.assets[] | select(.name | test("^srp-full\\.220x132-190x102\\.light\\.on\\.transparent.*symlink\\.tar\\.xz$")) | .browser_download_url' /picons/tmp/release.json | xargs wget -O /picons/tmp/srp.tar.xz \
+  && tar xfJ /picons/tmp/snp.tar.xz --one-top-level=/picons/snp --strip-components=1 \
+  && tar xfJ /picons/tmp/srp.tar.xz --one-top-level=/picons/srp --strip-components=1 \
+  && rm -rf /picons/tmp
 
 # Copy root filesystem
 COPY rootfs /
