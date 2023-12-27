@@ -28,7 +28,7 @@
     {
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
-      "matchStrings": ["TVHEADEND_COMMIT=(?<currentDigest>.*?)\\n"],
+      "matchStrings": ["ARG TVHEADEND_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
       "currentValueTemplate": "master",
       "depNameTemplate": "tvheadend",
       "packageNameTemplate": "https://github.com/tvheadend/tvheadend/",
