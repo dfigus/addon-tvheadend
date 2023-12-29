@@ -5,10 +5,12 @@ FROM alpine:3.19 AS builder
 
 # package versions
 ARG ARGTABLE_VER="2.13"
+ARG TVHEADEND_COMMIT="fd8b9e8ba21600d0bf6cdb20a7cc153482a2efa5"
+ARG COMSKIP_COMMIT="d0cc422362e188fbbdb3b079fea8ce8dc2a7f7dd"
 
 # environment settings
 ARG TZ="Etc/UTC"
-ARG TVHEADEND_COMMIT="fd8b9e8ba21600d0bf6cdb20a7cc153482a2efa5"
+
 ENV HOME="/config"
 
 COPY argtable2_config/ /tmp/argtable2_config/
@@ -134,6 +136,7 @@ RUN \
     echo "***** compile comskip ****" && \
     git clone https://github.com/erikkaashoek/Comskip /tmp/comskip && \
     cd /tmp/comskip && \
+    git checkout "${COMSKIP_COMMIT}" && \
     ./autogen.sh && \
     ./configure \
     --bindir=/usr/bin \
