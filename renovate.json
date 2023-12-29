@@ -49,7 +49,8 @@
     },
     {
       "matchDatasources": ["github-releases"],
-      "automerge": false
+      "automerge": false,
+      "versioning": "loose"
     },
     {
       "matchDatasources": ["repology"],
