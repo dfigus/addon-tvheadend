@@ -37,6 +37,15 @@
     {
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
+      "matchStrings": ["ARG COMSKIP_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
+      "currentValueTemplate": "master",
+      "depNameTemplate": "comskip",
+      "packageNameTemplate": "https://github.com/erikkaashoek/Comskip/",
+      "datasourceTemplate": "git-refs"
+    },
+    {
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
       "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"],
       "depNameTemplate": "picons/picons",
       "datasourceTemplate": "github-releases"
@@ -45,6 +54,10 @@
   "packageRules": [
     {
       "matchDepNames": ["tvheadend"],
+      "automerge": false
+    },
+    {
+      "matchDepNames": ["comskip"],
       "automerge": false
     },
     {
