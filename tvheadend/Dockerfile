@@ -74,6 +74,12 @@ RUN \
     git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
     cd /tmp/tvheadend && \
     git checkout "${TVHEADEND_COMMIT}" && \
+# patch cookie handling in extjs
+    sed -i 's/document\.cookie="ys-"+a/document\.cookie="ys-"+encodeURIComponent(a)/g' /tmp/tvheadend/vendor/ext-3.4/ext-all.js && \
+    sed -i 's/a\.substr(3)/decodeURIComponent(a\.substr(3))/g' /tmp/tvheadend/vendor/ext-3.4/ext-all.js && \
+    sed -i 's/document\.cookie = "ys-"+ name/ document\.cookie = "ys-"+ encodeURIComponent(name)/g' /tmp/tvheadend/vendor/ext-3.4/ext-all-debug.js && \
+    sed -i 's/document\.cookie = "ys-" + name/ document\.cookie = "ys-"+ encodeURIComponent(name)/g' /tmp/tvheadend/vendor/ext-3.4/ext-all-debug.js && \
+    sed -i 's/name\.substr(3)/decodeURIComponent(name\.substr(3))/g' /tmp/tvheadend/vendor/ext-3.4/ext-all-debug.js && \
     ./configure \
     `#Encoding` \
     --disable-ffmpeg_static \
@@ -226,12 +232,6 @@ RUN \
 
 # Copy root filesystem
 COPY rootfs /
-
-RUN sed -i 's/document\.cookie="ys-"+a/document\.cookie="ys-"+encodeURIComponent(a)/g' /usr/share/tvheadend/src/webui/static/extjs/ext-all.js \
-    && sed -i 's/a\.substr(3)/decodeURIComponent(a\.substr(3))/g' /usr/share/tvheadend/src/webui/static/extjs/ext-all.js \
-    && sed -i 's/document\.cookie = "ys-"+ name/ document\.cookie = "ys-"+ encodeURIComponent(name)/g' /usr/share/tvheadend/src/webui/static/extjs/ext-all-debug.js \
-    && sed -i 's/document\.cookie = "ys-" + name/ document\.cookie = "ys-"+ encodeURIComponent(name)/g' /usr/share/tvheadend/src/webui/static/extjs/ext-all-debug.js \
-    && sed -i 's/name\.substr(3)/decodeURIComponent(name\.substr(3))/g' /usr/share/tvheadend/src/webui/static/extjs/ext-all-debug.js
 
 # Build arguments
 ARG BUILD_ARCH
