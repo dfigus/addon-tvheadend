@@ -63,6 +63,7 @@
     {
       "matchDatasources": ["github-releases"],
       "automerge": false,
+      "minimumReleaseAge": "1 day",
       "versioning": "loose"
     },
     {
