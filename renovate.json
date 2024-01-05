@@ -2,13 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
-  "labels": ["dependencies", "no-stale"],
+  "labels": [
+    "dependencies",
+    "no-stale"
+  ],
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$",
+        "/build.yaml$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -17,7 +24,10 @@
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
@@ -27,80 +37,127 @@
       "depNameTemplate": "alpine_3_19/{{package}}"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG TVHEADEND_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
+      "matchStrings": [
+        "ARG TVHEADEND_COMMIT=\"(?<currentDigest>.*?)\"\\n"
+      ],
       "currentValueTemplate": "master",
       "depNameTemplate": "tvheadend",
       "packageNameTemplate": "https://github.com/tvheadend/tvheadend/",
       "datasourceTemplate": "git-refs"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG COMSKIP_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
+      "matchStrings": [
+        "ARG COMSKIP_COMMIT=\"(?<currentDigest>.*?)\"\\n"
+      ],
       "currentValueTemplate": "master",
       "depNameTemplate": "comskip",
       "packageNameTemplate": "https://github.com/erikkaashoek/Comskip/",
       "datasourceTemplate": "git-refs"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"],
+      "matchStrings": [
+        "ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"
+      ],
       "depNameTemplate": "picons/picons",
       "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [
     {
-      "matchDepNames": ["tvheadend"],
+      "matchDepNames": [
+        "tvheadend"
+      ],
       "automerge": false
     },
     {
-      "matchDepNames": ["comskip"],
+      "matchDepNames": [
+        "comskip"
+      ],
       "automerge": false
     },
     {
-      "matchDatasources": ["github-releases"],
+      "matchDatasources": [
+        "github-releases"
+      ],
       "automerge": false,
       "minimumReleaseAge": "1 day",
       "versioning": "loose"
     },
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": [
+        "repology"
+      ],
       "automerge": false
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
+      "matchDatasources": [
+        "docker"
+      ]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": false
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "addLabels": ["python"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "addLabels": [
+        "python"
+      ],
       "rangeStrategy": "pin"
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": false
     },
     {
       "groupName": "Docker",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
+      "matchDatasources": [
+        "repology"
+      ],
+      "matchPackagePatterns": [
+        "^alpine_.*/docker.*$"
+      ],
       "automerge": false
     },
     {
       "groupName": "Python",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
+      "matchDatasources": [
+        "repology"
+      ],
+      "matchPackagePatterns": [
+        "^alpine_.*/python3(-dev)?$"
+      ],
       "automerge": false
     }
   ]
