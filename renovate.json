@@ -6,8 +6,9 @@
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -17,6 +18,7 @@
       "datasourceTemplate": "docker"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -27,6 +29,7 @@
       "depNameTemplate": "alpine_3_19/{{package}}"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": ["ARG TVHEADEND_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
@@ -36,6 +39,7 @@
       "datasourceTemplate": "git-refs"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": ["ARG COMSKIP_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
@@ -45,6 +49,7 @@
       "datasourceTemplate": "git-refs"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"],
