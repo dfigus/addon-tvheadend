@@ -3,6 +3,7 @@
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
   "labels": ["dependencies", "no-stale"],
+  "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
   "regexManagers": [
