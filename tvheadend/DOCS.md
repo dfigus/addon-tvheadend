@@ -1,6 +1,6 @@
-# Home Assistant Community Add-on: TVHeadend
+# TVHeadend Home Assistant Add-On
 
-TVHeadend is a TV streaming server and recorder supporting:
+[TVHeadend][tvheadend] is a TV streaming server and recorder supporting:
 DVB-S, DVB-S2, DVB-C, DVB-T, DVB-T2, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun
 as input sources.
 TVHeadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming.
@@ -8,9 +8,15 @@ TVHeadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streami
 Multiple EPG sources are supported such as
 over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML.
 
-Have included the following along with TVHeadend:
--Webgrab+
--Streamlink
+This add-on has the following additional software preinstalled:
+
+- [picons][picons]: Channel icons
+- [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
+- [Webgrab+][webgrab]
+- [StreamLink][streamlink]
+
+In order to use them, additional TVHeadend configuration need to be done, which are
+outlined in here.
 
 ## Installation
 
@@ -36,6 +42,8 @@ system_packages:
   - ffmpeg
 init_commands:
   - echo 'Hello World'
+args:
+  - --satip_xml  http://192.168.1.1:49000/satipdesc.xml
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -43,7 +51,8 @@ init_commands:
 ### Option: `system_packages`
 
 Allows you to specify additional [Alpine packages][alpine-packages] to be
-installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ).
+installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ). The list of already installed
+packages can be found in the [Dockerfile][dockerfile].
 
 **Note**: _Adding many packages will result in a longer start-up time for the add-on._
 
@@ -56,19 +65,61 @@ every single time this add-on starts.
 ### Option: `args`
 
 Additional startup arguments to be passed to TVHeadend. A list of command line
-arguments can be found [here](https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md).
+arguments can be found [here][tvh-args].
 The addon itself will use the following arguments, hence do not use them:
 
-- `-C, --firstrun`: To create the initial access control entry
 - `--http-root`: This will be set to the HA `ingress_path` to enable the HA Ingress feature
 
 If you use a Fritz!Box with integrated DVC-C tuners, you might want to use the
 `--satip_xml  http://<your Fritz!BoxIP>:49000/satipdesc.xml` argument.
 
-## Additional Details
+As the addon-on will be regularily updated to the latest TVHeadend master version, TVHeadend also does
+a configuration migration quite often. To avoid the configuration backup (which can easily take 20-30 mins),
+you can use `--nobackup`.
 
-- Config files are stored in `/config/tvheadend/` and will be backed up
-- Recording files are stored in `/share/tvheadend/recordings/` and will NOT be backed up!
+## Additional Configuration
+
+### Picons
+
+[Picons][picons] are channel icons that can be included into TVHeadend and are automatically served to Kodi and
+other consuming apps. This addon-on includes the following picons:
+
+- `/picons/snp/`: `snp-full.220x132-190x102.light.on.transparent` (symlink)
+- `picons/srp`: `srp-full.220x132-190x102.light.on.transparent` (symlink)
+
+In order to use the picons in TVHeadend, you need to set those paths in the TVHeadend Configuration->General->Base:
+![picons-config](../images/picons-config.png)
+
+I might consider adding this to the default configuration for new installations in the future.
+
+In case you already had channels configured earlier, you need to reset the icons via Configuration->Channel/EPG->Channels.
+You need to select all channels via `CTRL-A` and afterwards click on `Reset Icon`:
+![picons-reset-icons](../images/picons-reset-icons.png)
+
+### Comskip
+
+Comskip is a commercial detector and creates additional files for chapters, that are automatically skipped e.g. via Kodi.
+Comskip WILL NOT cut the commercials from your recordings. As Comskip also does not longer create new releases, this add-on
+comes with a self-compiled version from the current master branch. The Comskip executable can be found in
+`/usr/bin/comskip`
+
+Comskip needs a configuration (ini) file in order to properly
+detect the commercial. Those ini files are usually country dependent and can be obtained in the [Comskip Forum][comskip-forum].
+Afterwards you need to place them inside a folder, that is accessible for the add-on. E.g. I would recommend to use the local
+addon config folder `/addon-configs/<>_tvheadend/tvheadend/` on supervisor side and `/config/tvheadend/` on addon-side.
+I might add a configuration option in the future.
+
+Finally configure comskip as a recording post-processor command in Configuration->Recording->Digital Video Recorder Profiles, e.g.:
+`/usr/bin/comskip --ini=/config/tvheadend/comskip/comskip.ini "%f`
+In this case the ini file is stored at `/config/tvheadend/comskip/comskip.ini`
+
+![picons-reset-icons](../images/comskip-config.png)
+
+### Additional Details
+
+- Config files are stored in `/config/tvheadend/` and will be backed up with the addon-on
+- Recording files are stored in `/share/tvheadend/recordings/` and will NOT be backed up with the addon-on,
+  but with HA full-backups!
 - `/dev/dvb/`, `/dev/dri/` would be respectively mapped to
   `/dev/dvb/`, `/dev/dri/` inside the addon.
 
@@ -124,7 +175,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[tvh-args]: https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md
+[picons]: https://github.com/picons/picons
+[comskip]: https://github.com/erikkaashoek/Comskip
+[comskip-forum]: https://www.kaashoek.com/comskip/
+[streamlink]: https://streamlink.github.io/
+[webgrab]: http://www.webgrabplus.com/
+[tvheadend]: https://tvheadend.org/
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
+[dockerfile]: https://github.com/dfigus/addon-tvheadend/blob/main/tvheadend/Dockerfile#L172-L206
 [forum]: https://community.home-assistant.io/
 [frenck]: https://github.com/frenck
 [dfigus]: https://github.com/dfigus

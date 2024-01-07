@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: TVHeadend
+# TVHeadend Home Assistant Add-On
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -29,7 +29,18 @@ over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML.
 
 ![TVHeadend](images/screenshot.png)
 
-This add-on comes with Webgrab+, Streamlink preinstalled as well.
+As TVHeadend stopped to create releases in 2017, this addon-on builds TVHeadend from
+the master branch.
+
+This add-on has the following additional software preinstalled:
+
+- [picons][picons]: Channel icons
+- [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
+- [Webgrab+][webgrab]
+- [StreamLink][streamlink]
+
+Personally, I only use picons and comskip and Webgrab+ is on the list to be removed.
+In case you are using it, please start a [discussion][discussions].
 
 [:books: Read the full add-on documentation][docs]
 
@@ -37,10 +48,7 @@ This add-on comes with Webgrab+, Streamlink preinstalled as well.
 
 Got questions?
 
-You have several options to get them answered:
-
-- The Home Assistant [Community Forum][forum].
-- You could also [open an issue here][issue] GitHub.
+Please start a [discussion][discussions] or create an [issue][issues] on Github
 
 ## Contributing
 
@@ -54,8 +62,9 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-This repository was intially cloned from [GauthamVarmaK][gautham]. As the original
-[gautham/addon-tvheaded] is no longer maintained, I ([Daniel Figus][dfigus]) took
+This repository was intially cloned from [GauthamVarmaK][gautham]'s
+[addon-tvheadend][original-repository]. repository. As the original
+[gautham/addon-tvheaded][original-repository] is no longer maintained, I [Daniel Figus][dfigus] took
 it over.
 
 This has been possible thanks to the community add-ons initiative by [Frenck]
@@ -90,15 +99,20 @@ SOFTWARE.
 [contributors]: https://github.com/dfigus/addon-tvheadend/graphs/contributors
 [docs]: https://github.com/dfigus/addon-tvheadend/blob/main/tvheadend/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
+[picons]: https://github.com/picons/picons
+[comskip]: https://github.com/erikkaashoek/Comskip
+[streamlink]: https://streamlink.github.io/
+[webgrab]: http://www.webgrabplus.com/
 [forum]: https://community.home-assistant.io/
+[gautham]: https://github.com/GauthamVarmaK
 [dfigus]: https://github.com/dfigus
 [frenck]: https://github.com/frenck
-[github-actions-shield]: https://github.com/GauthamVarmaK/addon-tvheadend/workflows/CI/badge.svg
-[github-actions]: https://github.com/GauthamVarmaK/addon-tvheadend/actions
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/dfigus/addon-tvheadend/issues
+[github-actions-shield]: https://github.com/dfigus/addon-tvheadend/workflows/CI/badge.svg
+[github-actions]: https://github.com/dfigus/addon-tvheadend/actions
+[issues]: https://github.com/dfigus/addon-tvheadend/issues
+[discussions]: https://github.com/dfigus/addon-tvheadend/discussions
 [license-shield]: https://img.shields.io/github/license/dfigus/addon-tvheadend.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [releases-shield]: https://img.shields.io/github/release/dfigus/addon-tvheadend.svg
 [releases]: https://github.com/dfigus/addon-tvheadend/releases
@@ -106,5 +120,7 @@ SOFTWARE.
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[original-repository]: https://github.com/GauthamVarmaK/addon-tvheadend
 [commits-shield]: https://img.shields.io/github/commit-activity/y/dfigus/addon-tvheadend.svg
 [commits]: https://github.com/dfigus/addon-tvheadend/commits/main
