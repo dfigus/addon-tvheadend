@@ -1,26 +1,35 @@
-# Home Assistant Community Add-on: TVHeadend
+# TVHeadend Home Assistant Add-On
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Community Forum][forum-shield]][forum]
-
-TVHeadend add-on by Daniel Figus.
+TVHeadend is a TV streaming server and recorder.
 
 ## About
 
 TVHeadend is a TV streaming server and recorder supporting:
-DVB-S, DVB-S2, DVB-C, DVB-T, DVB-T2, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun 
+DVB-S, DVB-S2, DVB-C, DVB-T, DVB-T2, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun
 as input sources.
 TVHeadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming.
 
-Multiple EPG sources are supported (over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML).
+Multiple EPG sources are supported such as
+over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML.
 
-Have included the following along with TVHeadend:
--Webgrab+
--Streamlink
+As TVHeadend stopped to create releases in 2017, this addon-on builds TVHeadend from
+the master branch.
 
+This add-on has the following additional software preinstalled:
+
+- [picons][picons]: Channel icons
+- [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
+- [Webgrab+][webgrab]
+- [StreamLink][streamlink]
+
+[picons]: https://github.com/picons/picons
+[comskip]: https://github.com/erikkaashoek/Comskip
+[streamlink]: https://streamlink.github.io/
+[webgrab]: http://www.webgrabplus.com/
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [release-shield]: https://img.shields.io/badge/version-{{ version }}-blue.svg
 [release]: {{ repo }}/tree/{{ version }}
