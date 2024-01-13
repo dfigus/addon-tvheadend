@@ -88,13 +88,13 @@ other consuming apps. This addon-on includes the following picons:
 - `picons/srp`: `srp-full.220x132-190x102.light.on.transparent` (symlink)
 
 In order to use the picons in TVHeadend, you need to set those paths in the TVHeadend Configuration->General->Base:
-![picons-config](../images/picons-config.png)
+![picons-config](https://github.com/dfigus/addon-tvheadend/raw/main/images/picons-config.png)
 
 I might consider adding this to the default configuration for new installations in the future.
 
 In case you already had channels configured earlier, you need to reset the icons via Configuration->Channel/EPG->Channels.
 You need to select all channels via `CTRL-A` and afterwards click on `Reset Icon`:
-![picons-reset-icons](../images/picons-reset-icons.png)
+![picons-reset-icons](https://github.com/dfigus/addon-tvheadend/raw/main/images/picons-reset-icons.png)
 
 ### Comskip
 
@@ -113,7 +113,7 @@ Finally configure comskip as a recording post-processor command in Configuration
 `/usr/bin/comskip --ini=/config/tvheadend/comskip/comskip.ini "%f`
 In this case the ini file is stored at `/config/tvheadend/comskip/comskip.ini`
 
-![picons-reset-icons](../images/comskip-config.png)
+![picons-reset-icons](https://github.com/dfigus/addon-tvheadend/raw/main/images/comskip-config.png)
 
 ### Additional Details
 
