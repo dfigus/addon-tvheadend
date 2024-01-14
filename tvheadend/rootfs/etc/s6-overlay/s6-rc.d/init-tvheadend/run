@@ -46,13 +46,13 @@ webgrabplus_install(){
 if ! bashio::fs.directory_exists '/config/tvheadend/'; then
     bashio::log.info "Creating default configuration directory at /config/tvheadend/"
     mkdir /config/tvheadend
-    bashio::log.info "Creating default recordings directory at /share/tvheadend/recordings"
-    mkdir -p /share/tvheadend/recordings
+    bashio::log.info "Creating default recordings directory at /media/tvheadend/recordings"
+    mkdir -p /media/tvheadend/recordings
 
     timeout 20s /usr/bin/tvheadend --firstrun -u root -g root -c /config/tvheadend
 
     bashio::log.info "Updating default DVR config with recordings folder and UTF-8 encoding"
-    find /config/tvheadend/dvr/config/ -type f -exec bash -c 'jq '\''.storage="/share/tvheadend/recordings" | .charset="UTF-8"'\'' "$1" > /tmp/tmp.json && mv /tmp/tmp.json "$1"' shell {} \; -quit
+    find /config/tvheadend/dvr/config/ -type f -exec bash -c 'jq '\''.storage="/media/tvheadend/recordings" | .charset="UTF-8"'\'' "$1" > /tmp/tmp.json && mv /tmp/tmp.json "$1"' shell {} \; -quit
 
 fi
 
