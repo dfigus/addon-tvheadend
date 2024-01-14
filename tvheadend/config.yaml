@@ -28,6 +28,7 @@ ports_description:
 map:
   - addon_config:rw
   - share:rw
+  - media:rw
 options:
   system_packages: []
   init_commands: []
