@@ -65,10 +65,6 @@ RUN \
 
 RUN \
     echo "**** compile tvheadend ****" && \
-    if [ -z ${TVHEADEND_COMMIT+x} ]; then \
-    TVHEADEND_COMMIT=$(curl -sX GET https://api.github.com/repos/tvheadend/tvheadend/commits/master \
-    | jq -r '. | .sha'); \
-    fi && \
     mkdir -p \
     /tmp/tvheadend && \
     git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
