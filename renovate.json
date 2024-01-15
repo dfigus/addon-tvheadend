@@ -70,7 +70,7 @@
       "matchDatasources": ["github-releases"],
       "automerge": false,
       "minimumReleaseAge": "1 day",
-      "versioning": "loose"
+      "versioning": "regex:^(?<minor>\\d+\\-\\d+\\-\\d+)(\\-\\-(?<patch>\\d+\\-\\d+\\-\\d+))$"
     },
     {
       "matchDatasources": ["repology"],
