@@ -77,6 +77,12 @@ As the addon-on will be regularily updated to the latest TVHeadend master versio
 a configuration migration quite often. To avoid the configuration backup (which can easily take 20-30 mins),
 you can use `--nobackup`.
 
+### Option: `comskip_ini`
+
+Content that should be used for the `comskip.ini`, which will be stored at `/config/tvheadend/comskip/comskip.ini`.
+The `comskip.ini` is required to tell Comskip how to detect commercials in the recording. See also the [Comskip section](#Comskip).
+It is recommended to edit it in YAML and use the [YAML literal style][yaml-literal] to preserve newline.
+
 ## Additional Configuration
 
 ### Picons
@@ -105,13 +111,9 @@ comes with a self-compiled version from the current master branch. The Comskip e
 
 Comskip needs a configuration (ini) file in order to properly
 detect the commercial. Those ini files are usually country dependent and can be obtained in the [Comskip Forum][comskip-forum].
-Afterwards you need to place them inside a folder, that is accessible for the add-on. E.g. I would recommend to use the local
-addon config folder `/addon-configs/<>_tvheadend/tvheadend/` on supervisor side and `/config/tvheadend/` on addon-side.
-I might add a configuration option in the future.
-
-Finally configure comskip as a recording post-processor command in Configuration->Recording->Digital Video Recorder Profiles, e.g.:
+You can use the [comskip_ini config option](#option-comskip_ini) to let the addon store the `comskip.ini`.
+Afterwards configure Comskip as a recording post-processor command in Configuration->Recording->Digital Video Recorder Profiles, e.g.:
 `/usr/bin/comskip --ini=/config/tvheadend/comskip/comskip.ini "%f`
-In this case the ini file is stored at `/config/tvheadend/comskip/comskip.ini`
 
 ![picons-reset-icons](https://github.com/dfigus/addon-tvheadend/raw/main/images/comskip-config.png)
 
@@ -176,6 +178,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [tvh-args]: https://github.com/tvheadend/tvheadend/blob/master/docs/markdown/cmdline_options.md
+[yaml-literal]: https://yaml.org/spec/1.2.2/#812-literal-style
 [picons]: https://github.com/picons/picons
 [comskip]: https://github.com/erikkaashoek/Comskip
 [comskip-forum]: https://www.kaashoek.com/comskip/
