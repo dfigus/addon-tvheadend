@@ -1,0 +1,17 @@
+---
+configuration:
+  system_packages:
+    name: System Packages
+    description: >-
+      Allows you to specify additional Alpine packages to be installed. Note: Adding many packages will result in a longer start-up time for the add-on.
+  init_commands:
+    name: Init Commands
+    description: >-
+      Allows you to specify shell commands that shall run during the startup.
+  args:
+    name: TVHeadend Startup Arguments
+    description: Additional startup arguments to be passed to TVHeadend.
+  comskip_ini:
+    name: Comskip ini
+    description: >-
+      Content that shall be stored as comskip.ini.
