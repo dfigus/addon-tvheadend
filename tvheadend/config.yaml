@@ -6,7 +6,6 @@ description: TV streaming server and recorder.
 url: "https://github.com/dfigus/addon-tvheadend"
 ingress: true
 ingress_stream: true
-ingress_port: 80
 init: false
 panel_icon: mdi:television
 arch:
