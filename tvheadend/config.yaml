@@ -35,8 +35,8 @@ options:
   comskip_ini: ""
 schema:
   system_packages:
-    - str
+    - str?
   init_commands:
-    - str
-  args: str
-  comskip_ini: str
+    - str?
+  args: str?
+  comskip_ini: str?
