@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Create Comskip ini from Add-On Config
+# ==============================================================================
+
+declare comskip_ini_content
+
+comskip_ini_content=$(bashio::config 'comskip_ini')
+
+if ! bashio::fs.directory_exists '/config/tvheadend/comskip'; then
+    bashio::log.info "Creating comskip ini directory at /config/tvheadend/comskip"
+    mkdir -p /config/tvheadend/comskip
+fi
+
+bashio::log.info "Updating comskip.ini"
+echo "${comskip_ini_content}" >  /config/tvheadend/comskip/comskip.ini
