@@ -18,6 +18,8 @@ host_network: true
 devices:
   - /dev/dvb
   - /dev/dri
+  - /dev/vcsm-cma
+  - /dev/vchiq
 ports:
   9981/tcp: 9981
   9982/tcp: 9982
