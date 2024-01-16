@@ -42,12 +42,16 @@ webgrabplus_install(){
     bashio::log.info '[Webgrab+] Finsihed all APK and PIP3 updates and installs.'
 }
 
-# Ensure directory exists
+# Create recordings directory if not existing
+if ! bashio::fs.directory_exists '/media/tvheadend/recordings'; then
+    bashio::log.info "Creating default recordings directory at /media/tvheadend/recordings"
+    mkdir -p /media/tvheadend/recordings
+fi
+
+# Ensure config directory exists
 if ! bashio::fs.directory_exists '/config/tvheadend/'; then
     bashio::log.info "Creating default configuration directory at /config/tvheadend/"
     mkdir /config/tvheadend
-    bashio::log.info "Creating default recordings directory at /media/tvheadend/recordings"
-    mkdir -p /media/tvheadend/recordings
 
     timeout 20s /usr/bin/tvheadend --firstrun -u root -g root -c /config/tvheadend
 
