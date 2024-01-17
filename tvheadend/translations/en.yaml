@@ -3,7 +3,8 @@ configuration:
   system_packages:
     name: System Packages
     description: >-
-      Allows you to specify additional Alpine packages to be installed. Note: Adding many packages will result in a longer start-up time for the add-on.
+      Allows you to specify additional Alpine packages to be installed. Note: Adding many packages will result in a
+      longer start-up time for the add-on.
   init_commands:
     name: Init Commands
     description: >-
