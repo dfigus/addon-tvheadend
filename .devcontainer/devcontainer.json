@@ -5,7 +5,7 @@
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
   "containerEnv": {
-    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}",
   },
   "customizations": {
     "vscode": {
@@ -13,16 +13,16 @@
       "settings": {
         "terminal.integrated.profiles.linux": {
           "zsh": {
-            "path": "/usr/bin/zsh"
-          }
+            "path": "/usr/bin/zsh",
+          },
         },
         "terminal.integrated.defaultProfile.linux": "zsh",
         "editor.formatOnPaste": false,
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
-        "files.trimTrailingWhitespace": true
-      }
-    }
+        "files.trimTrailingWhitespace": true,
+      },
+    },
   },
-  "mounts": ["type=volume,target=/var/lib/docker"]
+  "mounts": ["type=volume,target=/var/lib/docker"],
 }
