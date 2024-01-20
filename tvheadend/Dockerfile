@@ -166,7 +166,7 @@ RUN \
     python3-dev=3.11.6-r1 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r5 \
-    ffmpeg=6.1-r1 \
+    ffmpeg=6.1.1-r0 \
     ffmpeg4-libavcodec=4.4.4-r5 \
     ffmpeg4-libavdevice=4.4.4-r5 \
     ffmpeg4-libavfilter=4.4.4-r5 \
