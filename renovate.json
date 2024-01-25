@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
+  "reviewers": ["dfigus"],
+  "assignees": ["dfigus"],
   "dependencyDashboard": true,
   "labels": ["dependencies", "no-stale"],
   "configMigration": true,
@@ -60,17 +62,19 @@
   "packageRules": [
     {
       "matchDepNames": ["tvheadend"],
-      "automerge": false
+      "minimumReleaseAge": "1 day",
+      "automerge": true
     },
     {
       "matchDepNames": ["comskip"],
-      "automerge": false
+      "minimumReleaseAge": "1 day",
+      "automerge": true
     },
     {
       "matchDatasources": ["github-releases"],
-      "automerge": false,
+      "automerge": true,
       "minimumReleaseAge": "1 day",
-      "versioning": "regex:^(?<minor>\\d+\\-\\d+\\-\\d+)(\\-\\-(?<patch>\\d+\\-\\d+\\-\\d+))$"
+      "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$"
     },
     {
       "matchDatasources": ["repology"],
@@ -84,7 +88,7 @@
       "groupName": "Add-on base image",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": false
+      "automerge": true
     },
     {
       "matchManagers": ["pip_requirements"],
@@ -94,19 +98,19 @@
     {
       "matchManagers": ["pip_requirements"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": false
+      "automerge": true
     },
     {
       "groupName": "Docker",
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/docker.*$"],
-      "automerge": false
+      "automerge": true
     },
     {
       "groupName": "Python",
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
-      "automerge": false
+      "automerge": true
     }
   ]
 }
