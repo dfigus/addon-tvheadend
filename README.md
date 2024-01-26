@@ -36,11 +36,7 @@ This add-on has the following additional software preinstalled:
 
 - [picons][picons]: Channel icons
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
-- [Webgrab+][webgrab]
 - [StreamLink][streamlink]
-
-Personally, I only use picons and comskip and Webgrab+ is on the list to be removed.
-In case you are using it, please start a [discussion][discussions].
 
 [:books: Read the full add-on documentation][docs]
 
@@ -102,7 +98,6 @@ SOFTWARE.
 [picons]: https://github.com/picons/picons
 [comskip]: https://github.com/erikkaashoek/Comskip
 [streamlink]: https://streamlink.github.io/
-[webgrab]: http://www.webgrabplus.com/
 [forum]: https://community.home-assistant.io/
 [gautham]: https://github.com/GauthamVarmaK
 [dfigus]: https://github.com/dfigus
