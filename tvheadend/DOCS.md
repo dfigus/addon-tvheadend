@@ -12,7 +12,6 @@ This add-on has the following additional software preinstalled:
 
 - [picons][picons]: Channel icons
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
-- [Webgrab+][webgrab]
 - [StreamLink][streamlink]
 
 In order to use them, additional TVHeadend configuration need to be done, which are
@@ -183,7 +182,6 @@ SOFTWARE.
 [comskip]: https://github.com/erikkaashoek/Comskip
 [comskip-forum]: https://www.kaashoek.com/comskip/
 [streamlink]: https://streamlink.github.io/
-[webgrab]: http://www.webgrabplus.com/
 [tvheadend]: https://tvheadend.org/
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
 [dockerfile]: https://github.com/dfigus/addon-tvheadend/blob/main/tvheadend/Dockerfile#L172-L206
