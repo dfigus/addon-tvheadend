@@ -5,6 +5,7 @@ slug: tvheadend
 description: TV streaming server and recorder.
 url: "https://github.com/dfigus/addon-tvheadend"
 ingress: true
+ingress_port: 0
 ingress_stream: true
 init: false
 panel_icon: mdi:television
@@ -20,12 +21,6 @@ devices:
   - /dev/dri
   - /dev/vcsm-cma
   - /dev/vchiq
-ports:
-  9981/tcp: 9981
-  9982/tcp: 9982
-ports_description:
-  9981/tcp: TVH Web Interface
-  9982/tcp: TVH HTSP
 map:
   - addon_config:rw
   - share:rw
