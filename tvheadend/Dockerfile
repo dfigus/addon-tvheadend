@@ -199,7 +199,7 @@ RUN \
     zlib=1.3.1-r0 \
     py3-pip=23.3.1-r0 \
     libxslt=1.1.39-r0 \
-    nginx=1.24.0-r14 \
+    nginx=1.24.0-r15 \
     && pip3 install \
     --no-cache-dir \
     --prefer-binary \
