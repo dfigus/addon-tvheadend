@@ -5,7 +5,7 @@ FROM alpine:3.19 AS builder
 
 # package versions
 ARG ARGTABLE_VER="2.13"
-ARG TVHEADEND_COMMIT="bcfbe7dbeebb79c08fad22a214ecbfbbd426a3bd"
+ARG TVHEADEND_COMMIT="717056be02e1d1754bc86948c8523964c5ea0f1c"
 ARG COMSKIP_COMMIT="109b5d10b086d299d7e43878ccc7951cb7133ed8"
 
 # environment settings
