@@ -180,7 +180,7 @@ RUN \
     libhdhomerun-libs=20200225-r1 \
     libva=2.20.0-r0 \
     libvpx=1.13.1-r0 \
-    libxml2=2.11.6-r0 \
+    libxml2=2.11.7-r0 \
     libxslt=1.1.39-r0 \
     linux-headers=6.5-r0 \
 #    mesa-va-gallium=23.3.1-r0 \ AMD Driver not required
