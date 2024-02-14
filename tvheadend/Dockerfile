@@ -161,7 +161,7 @@ RUN \
     musl-dev=1.2.4_git20230717-r4 \
     gcc=13.2.1_git20231014-r0 \
     g++=13.2.1_git20231014-r0 \
-    libxml2-dev=2.11.6-r0 \
+    libxml2-dev=2.11.7-r0 \
     libxslt-dev=1.1.39-r0 \
     python3-dev=3.11.6-r1 \
     && apk add --no-cache \
