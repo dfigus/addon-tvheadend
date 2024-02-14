@@ -2,7 +2,7 @@
 name: TVHeadend
 version: dev
 slug: tvheadend
-description: TV streaming server and recorder.
+description: TV streaming server and recorder
 url: "https://github.com/dfigus/addon-tvheadend"
 ingress: true
 ingress_port: 0
@@ -17,7 +17,10 @@ arch:
   - i386
 host_network: true
 devices:
-  - /dev/dvb
+  - /dev/dvb/adapter0/demux0
+  - /dev/dvb/adapter0/dvr0
+  - /dev/dvb/adapter0/frontend0
+  - /dev/dvb/adapter0/net0
   - /dev/dri
   - /dev/vcsm-cma
   - /dev/vchiq
