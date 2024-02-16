@@ -9,7 +9,13 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+      "extensions": [
+        "timonwong.shellcheck",
+        "esbenp.prettier-vscode",
+        "bierner.github-markdown-preview",
+        "redhat.vscode-yaml",
+        "DavidAnson.vscode-markdownlint"
+      ],
       "settings": {
         "terminal.integrated.profiles.linux": {
           "zsh": {
