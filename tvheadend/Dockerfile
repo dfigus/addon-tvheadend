@@ -183,7 +183,7 @@ RUN \
     libxml2=2.11.7-r0 \
     libxslt=1.1.39-r0 \
     linux-headers=6.5-r0 \
-#    mesa-va-gallium=23.3.1-r0 \ AMD Driver not required
+#    mesa-va-gallium=23.3.6-r0 \ AMD Driver not required
     opus=1.4-r0	 \
     pcre2=10.42-r2	 \
     perl=5.38.2-r0	 \
