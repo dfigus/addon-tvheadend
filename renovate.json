@@ -63,18 +63,21 @@
     {
       "matchDepNames": ["tvheadend"],
       "minimumReleaseAge": "1 day",
-      "automerge": true
+      "automerge": true,
+      "automergeSchedule": ["on saturday"]
     },
     {
       "matchDepNames": ["comskip"],
       "minimumReleaseAge": "1 day",
-      "automerge": true
+      "automerge": true,
+      "automergeSchedule": ["on saturday"]
     },
     {
       "matchDatasources": ["github-releases"],
       "automerge": true,
       "minimumReleaseAge": "1 day",
-      "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$"
+      "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$",
+      "automergeSchedule": ["on saturday"]
     },
     {
       "matchDatasources": ["repology"],
