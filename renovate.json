@@ -81,6 +81,7 @@
     },
     {
       "matchDatasources": ["repology"],
+      "groupName": "Alpine packages",
       "automerge": true
     },
     {
