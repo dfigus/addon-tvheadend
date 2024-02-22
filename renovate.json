@@ -77,7 +77,7 @@
       "automergeSchedule": ["on saturday"]
     },
     {
-      "matchDepNames": ["comskip","comchap"],
+      "matchDepNames": ["comskip", "comchap"],
       "minimumReleaseAge": "1 day",
       "automerge": true,
       "automergeSchedule": ["on saturday"]
