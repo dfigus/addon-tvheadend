@@ -7,6 +7,7 @@ FROM alpine:3.19 AS builder
 ARG ARGTABLE_VER="2.13"
 ARG TVHEADEND_COMMIT="4430ee70f2a2888853d944fe7de619e51880f515"
 ARG COMSKIP_COMMIT="109b5d10b086d299d7e43878ccc7951cb7133ed8"
+ARG COMCHAP_COMMIT="dd7db30c258e965f282ac78825971dd0703a031e"
 
 # environment settings
 ARG TZ="Etc/UTC"
@@ -146,13 +147,19 @@ RUN \
     make -j 2 && \
     make DESTDIR=/tmp/comskip-build install
 
+RUN \
+    echo "***** compile comskip ****" && \
+    git clone https://github.com/BrettSheleski/comchap /tmp/comchap && \
+    cd /tmp/comchap && \
+    git checkout "${COMCHAP_COMMIT}"
+
+
 ####### runtime ###########
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 ARG PICONS_RELEASE="2024-02-17--00-08-41"
-ARG COMCHAP_COMMIT="dd7db30c258e965f282ac78825971dd0703a031e"
 
 COPY requirements.txt /tmp/
 
@@ -210,6 +217,8 @@ RUN \
 COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
 COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
+COPY --from=builder /tmp/comchap/comchap /usr/bin/comchap
+COPY --from=builder /tmp/comchap/comcut /usr/bin/comcut
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
@@ -226,14 +235,6 @@ RUN \
   && tar xfJ /picons/tmp/snp.tar.xz -C /picons/snp --strip-components=1 \
   && tar xfJ /picons/tmp/srp.tar.xz -C /picons/srp --strip-components=1 \
   && rm -rf /picons/tmp
-
-RUN \
-  git clone https://github.com/BrettSheleski/comchap /tmp/comchap \
-  && cd /tmp/comchap \
-  && git checkout "${COMCHAP_COMMIT}" \
-  && cp /tmp/comchap/comchap /usr/bin/comchap \
-  && cp /tmp/comchap/comcut /usr/bin/comcut \
-  && rm -rf /tmp/comchap
 
 # Copy root filesystem
 COPY rootfs /
