@@ -12,6 +12,7 @@ This add-on has the following additional software preinstalled:
 
 - [picons][picons]: Channel icons
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
+- [Comchap & Comcut][comchap]: Utilities to add chapters or cut commercials based on detected commercials from Comskip
 - [StreamLink][streamlink]
 
 In order to use them, additional TVHeadend configuration need to be done, which are
@@ -79,7 +80,7 @@ you can use `--nobackup`.
 ### Option: `comskip_ini`
 
 Content that should be used for the `comskip.ini`, which will be stored at `/config/tvheadend/comskip/comskip.ini`.
-The `comskip.ini` is required to tell Comskip how to detect commercials in the recording. See also the [Comskip section](#Comskip).
+The `comskip.ini` is required to tell Comskip how to detect commercials in the recording. See also the [Comskip section](Comskip).
 It is recommended to edit it in YAML and use the [YAML literal style][yaml-literal] to preserve newline.
 
 ## Additional Configuration
@@ -104,9 +105,9 @@ You need to select all channels via `CTRL-A` and afterwards click on `Reset Icon
 ### Comskip
 
 Comskip is a commercial detector and creates additional files for chapters, that are automatically skipped e.g. via Kodi.
-Comskip WILL NOT cut the commercials from your recordings. As Comskip also does not longer create new releases, this add-on
-comes with a self-compiled version from the current master branch. The Comskip executable can be found in
-`/usr/bin/comskip`
+Comskip WILL NOT cut the commercials from your recordings. This can be done via Comcut, included as well. As Comskip also
+does not longer create new releases, this add-on comes with a self-compiled version from the current master branch. The Comskip
+executable can be found in `/usr/bin/comskip`.
 
 Comskip needs a configuration (ini) file in order to properly
 detect the commercial. Those ini files are usually country dependent and can be obtained in the [Comskip Forum][comskip-forum].
@@ -114,7 +115,14 @@ You can use the [comskip_ini config option](#option-comskip_ini) to let the addo
 Afterwards configure Comskip as a recording post-processor command in Configuration->Recording->Digital Video Recorder Profiles, e.g.:
 `/usr/bin/comskip --ini=/config/tvheadend/comskip/comskip.ini "%f`
 
-![picons-reset-icons](https://github.com/dfigus/addon-tvheadend/raw/main/images/comskip-config.png)
+![comskip-config](https://github.com/dfigus/addon-tvheadend/raw/main/images/comskip-config.png)
+
+### Comchap & Comcut
+
+Comchap and Comcut are utility scripts that use the file producted by Comskip to add chapters to the recordings (Comchap) or even cut
+them entirely (Comcut) from the recording. The scripts are located in `/usr/bin/comchap` and `/usr/bin/comcut`. Those could be run as a post-processor command after recording.
+
+Further information how to use them can be found [here][comchap].
 
 ### Additional Details
 
@@ -180,6 +188,7 @@ SOFTWARE.
 [yaml-literal]: https://yaml.org/spec/1.2.2/#812-literal-style
 [picons]: https://github.com/picons/picons
 [comskip]: https://github.com/erikkaashoek/Comskip
+[comchap]: https://github.com/BrettSheleski/comchap
 [comskip-forum]: https://www.kaashoek.com/comskip/
 [streamlink]: https://streamlink.github.io/
 [tvheadend]: https://tvheadend.org/

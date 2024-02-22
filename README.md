@@ -36,6 +36,7 @@ This add-on has the following additional software preinstalled:
 
 - [picons][picons]: Channel icons
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
+- [Comchap & Comcut][comchap]: Utilities to add chapters or cut commercials based on detected commercials from Comskip
 - [StreamLink][streamlink]
 
 [:books: Read the full add-on documentation][docs]
@@ -97,6 +98,7 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [picons]: https://github.com/picons/picons
 [comskip]: https://github.com/erikkaashoek/Comskip
+[comchap]: https://github.com/BrettSheleski/comchap
 [streamlink]: https://streamlink.github.io/
 [forum]: https://community.home-assistant.io/
 [gautham]: https://github.com/GauthamVarmaK
