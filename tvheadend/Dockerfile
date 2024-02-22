@@ -152,6 +152,7 @@ RUN \
 FROM ${BUILD_FROM}
 
 ARG PICONS_RELEASE="2024-02-17--00-08-41"
+ARG COMCHAP_COMMIT="dd7db30c258e965f282ac78825971dd0703a031e"
 
 COPY requirements.txt /tmp/
 
@@ -225,6 +226,14 @@ RUN \
   && tar xfJ /picons/tmp/snp.tar.xz -C /picons/snp --strip-components=1 \
   && tar xfJ /picons/tmp/srp.tar.xz -C /picons/srp --strip-components=1 \
   && rm -rf /picons/tmp
+
+RUN \
+  git clone https://github.com/BrettSheleski/comchap /tmp/comchap \
+  && cd /tmp/comchap \
+  && git checkout "${COMCHAP_COMMIT}" \
+  && cp /tmp/comchap/comchap /usr/bin/comchap \
+  && cp /tmp/comchap/comcut /usr/bin/comcut \
+  && rm -rf /tmp/comchap
 
 # Copy root filesystem
 COPY rootfs /
