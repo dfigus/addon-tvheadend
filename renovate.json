@@ -54,6 +54,16 @@
       "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
+      "matchStrings": ["ARG COMCHAP_COMMIT=\"(?<currentDigest>.*?)\"\\n"],
+      "currentValueTemplate": "master",
+      "depNameTemplate": "comchap",
+      "packageNameTemplate": "https://github.com/BrettSheleski/comchap",
+      "datasourceTemplate": "git-refs"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
       "matchStrings": ["ARG PICONS_RELEASE=\"(?<currentValue>.*?)\"\\n"],
       "depNameTemplate": "picons/picons",
       "datasourceTemplate": "github-releases"
@@ -67,7 +77,7 @@
       "automergeSchedule": ["on saturday"]
     },
     {
-      "matchDepNames": ["comskip"],
+      "matchDepNames": ["comskip", "comchap"],
       "minimumReleaseAge": "1 day",
       "automerge": true,
       "automergeSchedule": ["on saturday"]
