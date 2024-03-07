@@ -16,6 +16,8 @@ arch:
   - armv7
   - i386
 host_network: true
+video: true
+usb: true
 devices:
   - /dev/dvb/
   - /dev/dvb/adapter0/demux0
