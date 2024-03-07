@@ -208,6 +208,7 @@ RUN \
     py3-pip=23.3.1-r0 \
     libxslt=1.1.39-r0 \
     nginx=1.24.0-r15 \
+    linux-firmware-other=20240115-r0 \
     && pip3 install \
     --no-cache-dir \
     --prefer-binary \
