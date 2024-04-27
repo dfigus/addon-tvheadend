@@ -207,7 +207,7 @@ RUN \
     zlib=1.3.1-r0 \
     py3-pip=23.3.1-r0 \
     libxslt=1.1.39-r0 \
-    nginx=1.24.0-r15 \
+    nginx=1.24.0-r16 \
     linux-firmware-other=20240312-r0 \
     && pip3 install \
     --no-cache-dir \
