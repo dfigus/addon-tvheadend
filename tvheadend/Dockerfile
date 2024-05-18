@@ -200,7 +200,7 @@ RUN \
     perl-json-xs=4.03-r3 \
     py3-requests=2.31.0-r1 \
     python3=3.11.9-r0 \
-    uriparser=0.9.7-r0 \
+    uriparser=0.9.8-r0 \
     x264=0.164_git20231001-r0 \
     x265=3.5-r4 \
     xmltv=1.2.1-r4 \
