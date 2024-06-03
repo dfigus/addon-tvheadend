@@ -191,7 +191,7 @@ RUN \
     libxml2=2.11.8-r0 \
     libxslt=1.1.39-r0 \
     linux-headers=6.5-r0 \
-#    mesa-va-gallium=23.3.6-r0 \ AMD Driver not required
+#    mesa-va-gallium=24.0.8-r1 \ AMD Driver not required
     opus=1.4-r0	 \
     pcre2=10.42-r2	 \
     perl=5.38.2-r0	 \
@@ -205,10 +205,10 @@ RUN \
     x265=3.5-r4 \
     xmltv=1.2.1-r4 \
     zlib=1.3.1-r0 \
-    py3-pip=23.3.1-r0 \
+    py3-pip=24.0-r2 \
     libxslt=1.1.39-r0 \
     nginx=1.24.0-r16 \
-    linux-firmware-other=20240312-r0 \
+    linux-firmware-other=20240513-r0 \
     && pip3 install \
     --no-cache-dir \
     --prefer-binary \
