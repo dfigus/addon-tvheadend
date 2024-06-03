@@ -117,11 +117,13 @@
     {
       "groupName": "Docker Major Dependencies",
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"]
+      "matchUpdateTypes": ["major"],
+      "separateMajorMinor": false
     },
     {
       "groupName": "Docker Major Dependencies",
-      "matchDatasources": ["repology"]
+      "matchDatasources": ["repology"],
+      "separateMajorMinor": false
     }
   ]
 }
