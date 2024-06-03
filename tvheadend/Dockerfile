@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM alpine:3.19 AS builder
+FROM alpine:3.20 AS builder
 ############## builder ##############
 
 # package versions
