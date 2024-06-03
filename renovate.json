@@ -28,7 +28,7 @@
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_19/{{package}}"
+      "depNameTemplate": "alpine_3_20/{{package}}"
     },
     {
       "customType": "regex",
@@ -95,7 +95,7 @@
       "automerge": true
     },
     {
-      "groupName": "Add-on base image",
+      "groupName": "Alpine packages",
       "matchDatasources": ["docker"]
     },
     {
