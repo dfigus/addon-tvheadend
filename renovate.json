@@ -28,7 +28,7 @@
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_20/{{package}}"
+      "depNameTemplate": "alpine_3_19/{{package}}"
     },
     {
       "customType": "regex",
@@ -113,17 +113,6 @@
       "matchManagers": ["pip_requirements"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
-    },
-    {
-      "groupName": "Docker Major Dependencies",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"],
-      "separateMajorMinor": false
-    },
-    {
-      "groupName": "Docker Major Dependencies",
-      "matchDatasources": ["repology"],
-      "separateMajorMinor": false
     }
   ]
 }
