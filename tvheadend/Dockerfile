@@ -174,7 +174,7 @@ RUN \
     python3-dev=3.12.3-r1 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg=6.1.1-r7 \
+    ffmpeg=6.1.1-r8 \
     ffmpeg4-libavcodec=4.4.4-r7 \
     ffmpeg4-libavdevice=4.4.4-r7 \
     ffmpeg4-libavfilter=4.4.4-r7 \
@@ -187,7 +187,7 @@ RUN \
     libdvbcsa=1.1.0-r1 \
     libhdhomerun-libs=20200225-r1 \
     libva=2.21.0-r0 \
-    libvpx=1.14.0-r0 \
+    libvpx=1.14.1-r0 \
     libxml2=2.12.7-r0 \
     libxslt=1.1.39-r1 \
     linux-headers=6.6-r0 \
