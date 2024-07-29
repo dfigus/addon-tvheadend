@@ -174,15 +174,15 @@ RUN \
     python3-dev=3.12.3-r1 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg4=4.4.4-r7 \
-    ffmpeg4-libavcodec=4.4.4-r7 \
-    ffmpeg4-libavdevice=4.4.4-r7 \
-    ffmpeg4-libavfilter=4.4.4-r7 \
-    ffmpeg4-libavformat=4.4.4-r7 \
-    ffmpeg4-libavutil=4.4.4-r7 \
-    ffmpeg4-libpostproc=4.4.4-r7 \
-    ffmpeg4-libswresample=4.4.4-r7 \
-    ffmpeg4-libswscale=4.4.4-r7 \
+    ffmpeg=6.1.1-r8 \
+    ffmpeg-libavcodec=6.1.1-r8 \
+    ffmpeg-libavdevice=6.1.1-r8 \
+    ffmpeg-libavfilter=6.1.1-r8 \
+    ffmpeg-libavformat=6.1.1-r8 \
+    ffmpeg-libavutil=6.1.1-r8 \
+    ffmpeg-libpostproc=6.1.1-r8 \
+    ffmpeg-libswresample=6.1.1-r8 \
+    ffmpeg-libswscale=6.1.1-r8 \
     gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
     libhdhomerun-libs=20200225-r1 \
