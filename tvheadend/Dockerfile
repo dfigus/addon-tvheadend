@@ -21,43 +21,43 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
-    jq \
-    curl \
-    bash \
-    autoconf \
-    automake \
-    bsd-compat-headers \
-    build-base \
-    cmake \
-    coreutils \
-    dbus-dev \
-    ffmpeg-dev \
-    file \
-    findutils \
-    gettext-dev \
-    git \
-    gnu-libiconv-dev \
-    libdvbcsa-dev \
-    libgcrypt-dev \
-    libhdhomerun-dev \
-    libtool \
-    libva-dev \
-    libvpx-dev \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    openssl-dev \
-    opus-dev \
-    patch \
-    pcre2-dev \
-    pkgconf \
-    pngquant \
-    python3 \
-    sdl2-dev \
-    uriparser-dev \
-    x264-dev \
-    x265-dev \
-    zlib-dev
+    jq=1.7.1-r0	\
+    curl=8.9.1-r1 \
+    bash=5.2.26-r0 \
+    autoconf=2.72-r0 \
+    automake=1.16.5-r2 \
+    bsd-compat-headers=0.7.2-r6 \
+    build-base=0.5-r3 \
+    cmake=3.29.3-r0 \
+    coreutils=9.5-r1 \
+    dbus-dev=1.14.10-r1 \
+    ffmpeg-dev=6.1.1-r8	\
+    file=5.45-r1 \
+    findutils=4.9.0-r5 \
+    gettext-dev=0.22.5-r0 \
+    git=2.45.2-r0 \
+    gnu-libiconv-dev=1.17-r2 \
+    libdvbcsa-dev=1.1.0-r1 \
+    libgcrypt-dev=1.10.3-r0	\
+    libhdhomerun-dev=20200225-r1 \
+    libtool=2.4.7-r3 \
+    libva-dev=2.21.0-r0 \
+    libvpx-dev=1.14.1-r0 \
+    libxml2-dev=2.12.7-r0 \
+    libxslt-dev=1.1.39-r1 \
+    linux-headers=6.6-r0 \
+    openssl-dev=3.3.2-r0 \
+    opus-dev=1.5.2-r0 \
+    patch=2.7.6-r10 \
+    pcre2-dev=10.43-r0 \
+    pkgconf=2.2.0-r0 \
+    pngquant=3.0.3-r0 \
+    python3=3.12.3-r2 \
+    sdl2-dev=2.28.5-r1 \
+    uriparser-dev=0.9.8-r0 \
+    x264-dev=0.164_git20231001-r0 \
+    x265-dev=3.6-r0 \
+    zlib-dev=1.3.1-r1
 
 RUN \
     echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
