@@ -31,7 +31,7 @@ RUN \
     cmake=3.29.3-r0 \
     coreutils=9.5-r1 \
     dbus-dev=1.14.10-r1 \
-    ffmpeg-dev=6.1.1-r8	\
+    ffmpeg4-dev=4.4.4-r7	\
     file=5.45-r1 \
     findutils=4.9.0-r5 \
     gettext-dev=0.22.5-r0 \
@@ -174,15 +174,16 @@ RUN \
     python3-dev=3.12.6-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg=6.1.1-r8 \
-    ffmpeg-libavcodec=6.1.1-r8 \
-    ffmpeg-libavdevice=6.1.1-r8 \
-    ffmpeg-libavfilter=6.1.1-r8 \
-    ffmpeg-libavformat=6.1.1-r8 \
-    ffmpeg-libavutil=6.1.1-r8 \
-    ffmpeg-libpostproc=6.1.1-r8 \
-    ffmpeg-libswresample=6.1.1-r8 \
-    ffmpeg-libswscale=6.1.1-r8 \
+    ffmpeg4=4.4.4-r7 \
+    ffmpeg=6.1.1-r8	\
+    ffmpeg4-libavcodec=4.4.4-r7 \
+    ffmpeg4-libavdevice=4.4.4-r7 \
+    ffmpeg4-libavfilter=4.4.4-r7 \
+    ffmpeg4-libavformat=4.4.4-r7 \
+    ffmpeg4-libavutil=4.4.4-r7 \
+    ffmpeg4-libpostproc=4.4.4-r7 \
+    ffmpeg4-libswresample=4.4.4-r7 \
+    ffmpeg4-libswscale=4.4.4-r7 \
     gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
     libhdhomerun-libs=20200225-r1 \
