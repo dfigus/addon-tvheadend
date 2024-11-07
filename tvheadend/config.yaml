@@ -82,3 +82,4 @@ schema:
     - country: str?
       site: str?
       channel: str?
+  wg_config: str?

@@ -9,6 +9,7 @@ declare country
 declare site
 declare channel
 declare filename
+declare wg_config
 
 bashio::log.info "Init WG++..."
 # create WG++ guide folder in addon config folder
@@ -37,14 +38,30 @@ function verifySiteFile() {
     bashio::log.fatal "WG Channel Configuration is incorrect for country $1 site $2"
     bashio::log.fatal "File $1/$2.channels.xml is traversing paths. Only use contries and sites"
     bashio::log.fatal "(case-sensitive) from the WG++ siteini.pack folder"
-    bashio::exit.nok
+    bashio::log.fatal
     bashio::exit.nok
   fi
   echo "$fullpath"
 }
 
+if bashio::config.has_value 'wg_config' && bashio::config.has_value 'wg_channels'; then
+  bashio::log.fatal
+  bashio::log.fatal "Both WG++ channels and a WG++ config xml are set. Only one can be set"
+  bashio::log.fatal
+  bashio::exit.nok
+fi
+
 # remove dummy channel from initial config xml
 xmlstarlet ed -L -d "/settings/channel" /wg/.wg++/WebGrab++.config.xml
+
+if bashio::config.has_value 'wg_config'; then
+  bashio::log.info "Using supplied WG++ config..."
+  # Overwrite config file from addon config
+  wg_config=$(bashio::config 'wg_config')
+  echo "${wg_config}" > /wg/.wg++/WebGrab++.config.xml
+  xmlstarlet val -q /wg/.wg++/WebGrab++.config.xml || bashio::exit.nok "Invalid WG++ config supplied"
+  xmlstarlet fo /wg/.wg++/WebGrab++.config.xml > /wg/.wg++/tmp.xml && mv /wg/.wg++/tmp.xml /wg/.wg++/WebGrab++.config.xml
+fi
 
 # Add Channels into WG++ ini
 if bashio::config.has_value 'wg_channels'; then
