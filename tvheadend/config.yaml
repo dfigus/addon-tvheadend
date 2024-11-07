@@ -12,9 +12,7 @@ panel_icon: mdi:television
 arch:
   - aarch64
   - amd64
-  - armhf
   - armv7
-  - i386
 host_network: true
 video: true
 usb: true
@@ -72,6 +70,7 @@ options:
   init_commands: []
   args: ""
   comskip_ini: ""
+  wg_channels: []
 schema:
   system_packages:
     - str?
@@ -79,3 +78,7 @@ schema:
     - str?
   args: str?
   comskip_ini: str?
+  wg_channels:
+    - country: str?
+      site: str?
+      channel: str?

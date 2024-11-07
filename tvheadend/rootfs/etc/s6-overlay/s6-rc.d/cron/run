@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Start cron
+# ==============================================================================
+
+bashio::log.info "Starting cron..."
+
+exec crond -f -l 2
