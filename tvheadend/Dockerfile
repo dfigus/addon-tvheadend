@@ -209,7 +209,7 @@ RUN \
     libxslt=1.1.39-r1 \
     nginx=1.26.2-r0 \
     linux-firmware-other=20240811-r0 \
-    dotnet8-runtime=8.0.10-r0 \
+    dotnet8-runtime=8.0.11-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
