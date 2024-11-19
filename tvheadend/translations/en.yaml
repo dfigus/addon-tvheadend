@@ -16,3 +16,12 @@ configuration:
     name: Comskip ini
     description: >-
       Content that shall be stored as comskip.ini.
+  wg_config:
+    name: WebGrab+Plus Configuration XML
+    description: >-
+      A full WebGrab+Plus configuration XML that shall be used unaltered. Do not use this option if you want to use
+      the WebGrab+Plus Channels option.
+  wg_channels:
+    name: WebGrab+Plus Channels
+    description: >-
+      A list of channels that shall be copied from the siteini.pack into the WebGrab+Plus configuration
