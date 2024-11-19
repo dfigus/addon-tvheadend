@@ -38,6 +38,7 @@ This add-on has the following additional software preinstalled:
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
 - [Comchap & Comcut][comchap]: Utilities to add chapters or cut commercials based on detected commercials from Comskip
 - [StreamLink][streamlink]
+- [WebGrab++][wg++]: A XMLTV EPG grabber for many sites. Useful in case OTA EPG is not sufficient.
 
 [:books: Read the full add-on documentation][docs]
 
@@ -100,6 +101,7 @@ SOFTWARE.
 [comskip]: https://github.com/erikkaashoek/Comskip
 [comchap]: https://github.com/BrettSheleski/comchap
 [streamlink]: https://streamlink.github.io/
+[wg++]: http://www.webgrabplus.com/
 [forum]: https://community.home-assistant.io/
 [gautham]: https://github.com/GauthamVarmaK
 [dfigus]: https://github.com/dfigus

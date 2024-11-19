@@ -14,6 +14,7 @@ This add-on has the following additional software preinstalled:
 - [Comskip][comskip]: A tool to mark commercials in recordings (autoskipped in Kodi)
 - [Comchap & Comcut][comchap]: Utilities to add chapters or cut commercials based on detected commercials from Comskip
 - [StreamLink][streamlink]
+- [WebGrab++][wg++]: A XMLTV EPG grabber for many sites. Useful in case OTA EPG is not sufficient.
 
 In order to use them, additional TVHeadend configuration need to be done, which are
 outlined in here.
@@ -83,6 +84,26 @@ Content that should be used for the `comskip.ini`, which will be stored at `/con
 The `comskip.ini` is required to tell Comskip how to detect commercials in the recording. See also the [Comskip section](Comskip).
 It is recommended to edit it in YAML and use the [YAML literal style][yaml-literal] to preserve newline.
 
+### Option: WebGrab+Plus Channels `wg_channels`
+
+A list of channels that shall be used by WebGrab+Plus. Example:
+
+```
+wg_channels:
+  - country: "Germany"
+    site: "tvtoday.de"
+    channel: "ard"
+  - country: "Germany"
+    site: "tvtoday.de"
+    channel: "zdf"
+```
+
+This will add two channels from the `siteini.pack` folder to the WebGrab+Plus XML config file. The country is translated to the folder name `Germany`, the site is used to find the `tvtoday.de.channels.xml` file and the `channel` is used to find the `<channel site_id="ard">` and `<channel site_id="zdf">` entries. All names are _case-sensitive_. The matching channels are copied over to the default WebGrab+Plus configuration XML (with the dummy channel removed).
+
+### Option: WebGrab+Plus Configuration XML `wg_config`
+
+As a more advanced user you might want to fully customize the WebGrab+Plus configuration file. This allows you to enter your WebGrab+Plus license or use decrypt keys. Do not use this configuration together with the simple `wg_channel` configuration.
+
 ## Additional Configuration
 
 ### Picons
@@ -123,6 +144,15 @@ Comchap and Comcut are utility scripts that use the file producted by Comskip to
 them entirely (Comcut) from the recording. The scripts are located in `/usr/bin/comchap` and `/usr/bin/comcut`. Those could be run as a post-processor command after recording.
 
 Further information how to use them can be found [here][comchap].
+
+### WebGrab+Plus
+
+This addon comes with preinstalled WebGrab+Plus, a XMLTV EPG grabber. The TVHeadend integration is already done and the grabber runs every night at 0:00.
+In order to enable the WebGrab+Plus grabber, you need to enable it in TVHeadend Configuration -> Channel / EPG -> EPG Grabber Modules:
+
+![tvh_wg++][https://github.com/dfigus/addon-tvheadend/raw/main/images/tvh_wg++.png]
+
+Further information can be found [here][wg++]
 
 ### Additional Details
 
@@ -191,6 +221,7 @@ SOFTWARE.
 [comchap]: https://github.com/BrettSheleski/comchap
 [comskip-forum]: https://www.kaashoek.com/comskip/
 [streamlink]: https://streamlink.github.io/
+[wg++]: http://www.webgrabplus.com/
 [tvheadend]: https://tvheadend.org/
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
 [dockerfile]: https://github.com/dfigus/addon-tvheadend/blob/main/tvheadend/Dockerfile#L172-L206
