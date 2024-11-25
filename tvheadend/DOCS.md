@@ -150,7 +150,7 @@ Further information how to use them can be found [here][comchap].
 This addon comes with preinstalled WebGrab+Plus, a XMLTV EPG grabber. The TVHeadend integration is already done and the grabber runs every night at 0:00.
 In order to enable the WebGrab+Plus grabber, you need to enable it in TVHeadend Configuration -> Channel / EPG -> EPG Grabber Modules:
 
-![tvh_wg++][https://github.com/dfigus/addon-tvheadend/raw/main/images/tvh_wg++.png]
+![tvh_wg++](https://github.com/dfigus/addon-tvheadend/raw/main/images/tvh_wg++.png)
 
 Further information can be found [here][wg++]
 

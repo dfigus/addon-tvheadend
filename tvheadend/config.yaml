@@ -17,6 +17,7 @@ host_network: true
 video: true
 usb: true
 udev: true
+homeassistant_api: true
 devices:
   - /dev/dvb/
   - /dev/dvb/adapter0/demux0
