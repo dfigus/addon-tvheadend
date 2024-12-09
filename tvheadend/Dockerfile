@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM alpine:3.20 AS builder
+FROM alpine:3.21 AS builder
 ############## builder ##############
 
 # package versions
@@ -23,41 +23,41 @@ RUN \
     apk add --no-cache \
     jq=1.7.1-r0	\
     curl=8.11.0-r2 \
-    bash=5.2.26-r0 \
+    bash=5.2.37-r0 \
     autoconf=2.72-r0 \
-    automake=1.16.5-r2 \
+    automake=1.17-r0 \
     bsd-compat-headers=0.7.2-r6 \
     build-base=0.5-r3 \
-    cmake=3.29.3-r0 \
+    cmake=3.31.1-r0 \
     coreutils=9.5-r1 \
-    dbus-dev=1.14.10-r1 \
-    ffmpeg4-dev=4.4.4-r7	\
-    file=5.45-r1 \
-    findutils=4.9.0-r5 \
+    dbus-dev=1.14.10-r4 \
+    ffmpeg4-dev=4.4.5-r0 \
+    file=5.46-r0 \
+    findutils=4.10.0-r0 \
     gettext-dev=0.22.5-r0 \
-    git=2.45.2-r0 \
+    git=2.47.1-r0 \
     gnu-libiconv-dev=1.17-r2 \
     libdvbcsa-dev=1.1.0-r1 \
-    libgcrypt-dev=1.10.3-r0	\
+    libgcrypt-dev=1.10.3-r1	\
     libhdhomerun-dev=20200225-r1 \
     libtool=2.4.7-r3 \
-    libva-dev=2.21.0-r0 \
-    libvpx-dev=1.14.1-r0 \
-    libxml2-dev=2.12.7-r0 \
-    libxslt-dev=1.1.39-r1 \
-    linux-headers=6.6-r0 \
-    openssl-dev=3.3.2-r1 \
-    opus-dev=1.5.2-r0 \
+    libva-dev=2.22.0-r1 \
+    libvpx-dev=1.15.0-r0 \
+    libxml2-dev=2.13.4-r3 \
+    libxslt-dev=1.1.42-r1 \
+    linux-headers=6.6-r1 \
+    openssl-dev=3.3.2-r4 \
+    opus-dev=1.5.2-r1 \
     patch=2.7.6-r10 \
     pcre2-dev=10.43-r0 \
-    pkgconf=2.2.0-r0 \
+    pkgconf=2.3.0-r0 \
     pngquant=3.0.3-r0 \
     python3=3.12.8-r1 \
-    sdl2-dev=2.28.5-r1 \
+    sdl2-dev=2.30.9-r0 \
     uriparser-dev=0.9.8-r0 \
-    x264-dev=0.164_git20231001-r0 \
+    x264-dev=0.164.3108-r0 \
     x265-dev=3.6-r0 \
-    zlib-dev=1.3.1-r1
+    zlib-dev=1.3.1-r2
 
 RUN \
     echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
@@ -127,6 +127,9 @@ RUN \
     /tmp/argtable --strip-components=1 && \
     cp /tmp/argtable2_config/config.* /tmp/argtable && \
     cd /tmp/argtable && \
+    cp /tmp/argtable2_config/*.patch /tmp/argtable && \
+    patch -p1 < fix-implicit-function-declaration.patch && \
+    patch -p1 < fix-undeclared-library-function.patch && \
     ./configure \
     --prefix=/usr && \
     make -j 2 && \
