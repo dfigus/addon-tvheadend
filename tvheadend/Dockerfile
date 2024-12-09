@@ -127,6 +127,9 @@ RUN \
     /tmp/argtable --strip-components=1 && \
     cp /tmp/argtable2_config/config.* /tmp/argtable && \
     cd /tmp/argtable && \
+    cp /tmp/argtable2_config/*.patch /tmp/argtable && \
+    patch -p1 < fix-implicit-function-declaration.patch && \
+    patch -p1 < fix-undeclared-library-function.patch && \
     ./configure \
     --prefix=/usr && \
     make -j 2 && \
