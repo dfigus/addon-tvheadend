@@ -170,7 +170,7 @@ RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
     musl-dev=1.2.5-r0 \
-    gcc=13.2.1_git20240309-r0 \
+    gcc=14.2.0-r4 \
     g++=13.2.1_git20240309-r0 \
     libxml2-dev=2.12.7-r0 \
     libxslt-dev=1.1.39-r1 \
@@ -211,7 +211,7 @@ RUN \
     py3-pip=24.0-r2 \
     libxslt=1.1.39-r1 \
     nginx=1.26.2-r0 \
-    linux-firmware-other=20240811-r0 \
+    linux-firmware-other=20240909-r3 \
     dotnet8-runtime=8.0.11-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
