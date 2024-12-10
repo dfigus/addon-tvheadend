@@ -171,7 +171,7 @@ RUN \
     && apk add --no-cache --virtual .build-deps \
     musl-dev=1.2.5-r8 \
     gcc=14.2.0-r4 \
-    g++=13.2.1_git20240309-r0 \
+    g++=14.2.0-r4 \
     libxml2-dev=2.13.4-r3 \
     libxslt-dev=1.1.42-r1 \
     python3-dev=3.12.8-r1 \
