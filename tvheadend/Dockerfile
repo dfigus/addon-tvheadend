@@ -31,7 +31,7 @@ RUN \
     cmake=3.31.1-r0 \
     coreutils=9.5-r1 \
     dbus-dev=1.14.10-r4 \
-    ffmpeg4-dev=4.4.5-r0 \
+    ffmpeg4-dev=4.4.5-r1 \
     file=5.46-r0 \
     findutils=4.10.0-r0 \
     gettext-dev=0.22.5-r0 \
@@ -169,50 +169,50 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-    musl-dev=1.2.5-r0 \
+    musl-dev=1.2.5-r8 \
     gcc=14.2.0-r4 \
     g++=13.2.1_git20240309-r0 \
-    libxml2-dev=2.12.7-r0 \
-    libxslt-dev=1.1.39-r1 \
+    libxml2-dev=2.13.4-r3 \
+    libxslt-dev=1.1.42-r1 \
     python3-dev=3.12.8-r1 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg4=4.4.4-r7 \
-    ffmpeg=6.1.1-r8	\
-    ffmpeg4-libavcodec=4.4.4-r7 \
-    ffmpeg4-libavdevice=4.4.4-r7 \
-    ffmpeg4-libavfilter=4.4.4-r7 \
-    ffmpeg4-libavformat=4.4.4-r7 \
-    ffmpeg4-libavutil=4.4.4-r7 \
-    ffmpeg4-libpostproc=4.4.4-r7 \
-    ffmpeg4-libswresample=4.4.4-r7 \
-    ffmpeg4-libswscale=4.4.4-r7 \
+    ffmpeg4=4.4.5-r1 \
+    ffmpeg=6.1.2-r1	\
+    ffmpeg4-libavcodec=4.4.5-r1 \
+    ffmpeg4-libavdevice=4.4.5-r1 \
+    ffmpeg4-libavfilter=4.4.5-r1 \
+    ffmpeg4-libavformat=4.4.5-r1 \
+    ffmpeg4-libavutil=4.4.5-r1 \
+    ffmpeg4-libpostproc=4.4.5-r1 \
+    ffmpeg4-libswresample=4.4.5-r1 \
+    ffmpeg4-libswscale=4.4.5-r1 \
     gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
     libhdhomerun-libs=20200225-r1 \
-    libva=2.21.0-r0 \
-    libvpx=1.14.1-r0 \
-    libxml2=2.12.7-r0 \
-    libxslt=1.1.39-r1 \
-    linux-headers=6.6-r0 \
-    opus=1.5.2-r0	 \
+    libva=2.22.0-r1 \
+    libvpx=1.15.0-r0 \
+    libxml2=2.13.4-r3 \
+    libxslt=1.1.42-r1 \
+    linux-headers=6.6-r1 \
+    opus=1.5.2-r1	 \
     pcre2=10.43-r0	 \
-    perl=5.38.2-r0	 \
+    perl=5.40.0-r3	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
-    perl-json-xs=4.03-r4 \
+    perl-json-xs=4.03-r5 \
     py3-requests=2.32.3-r0 \
     python3=3.12.8-r1 \
     uriparser=0.9.8-r0 \
-    x264=0.164_git20231001-r0 \
+    x264=0.164.3108-r0 \
     x265=3.6-r0 \
-    xmltv=1.3.0-r0 \
-    zlib=1.3.1-r1 \
-    py3-pip=24.0-r2 \
-    libxslt=1.1.39-r1 \
-    nginx=1.26.2-r0 \
+    xmltv=1.3.0-r1 \
+    zlib=1.3.1-r2 \
+    py3-pip=24.3.1-r0 \
+    libxslt=1.1.42-r1 \
+    nginx=1.26.2-r3 \
     linux-firmware-other=20240909-r3 \
-    dotnet8-runtime=8.0.11-r0 \
+    dotnet8-runtime=8.0.11-r1 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
