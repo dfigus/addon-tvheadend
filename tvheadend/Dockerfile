@@ -32,7 +32,7 @@ RUN \
     coreutils=9.5-r1 \
     dbus-dev=1.14.10-r4 \
     ffmpeg4-dev=4.4.5-r1 \
-    file=5.46-r0 \
+    file=5.46-r2 \
     findutils=4.10.0-r0 \
     gettext-dev=0.22.5-r0 \
     git=2.47.1-r0 \
