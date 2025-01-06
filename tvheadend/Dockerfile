@@ -29,7 +29,7 @@ RUN \
     bsd-compat-headers=0.7.2-r6 \
     build-base=0.5-r3 \
     cmake=3.31.1-r0 \
-    coreutils=9.5-r1 \
+    coreutils=9.5-r2 \
     dbus-dev=1.14.10-r4 \
     ffmpeg4-dev=4.4.5-r1 \
     file=5.46-r2 \
