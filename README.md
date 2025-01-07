@@ -72,7 +72,7 @@ check [the contributor's page][contributors].
 
 MIT License
 
-Copyright (c) 2023-2024 Daniel Figus
+Copyright (c) 2023-2025 Daniel Figus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -109,7 +109,7 @@ SOFTWARE.
 [issues]: https://github.com/dfigus/addon-tvheadend/issues
 [discussions]: https://github.com/dfigus/addon-tvheadend/discussions
 [license-shield]: https://img.shields.io/github/license/dfigus/addon-tvheadend.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [releases-shield]: https://img.shields.io/github/release/dfigus/addon-tvheadend.svg
 [releases]: https://github.com/dfigus/addon-tvheadend/releases
