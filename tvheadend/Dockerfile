@@ -35,7 +35,7 @@ RUN \
     file=5.46-r2 \
     findutils=4.10.0-r0 \
     gettext-dev=0.22.5-r0 \
-    git=2.47.1-r0 \
+    git=2.47.2-r0 \
     gnu-libiconv-dev=1.17-r2 \
     libdvbcsa-dev=1.1.0-r1 \
     libgcrypt-dev=1.10.3-r1	\
