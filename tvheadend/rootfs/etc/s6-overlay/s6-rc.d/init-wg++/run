@@ -15,7 +15,7 @@ bashio::log.info "Init WG++..."
 # create WG++ guide folder in addon config folder
 if ! bashio::fs.directory_exists "/config/tvheadend/wg++"; then
   bashio::log.info "Creating WG++ folder in config folder..."
-  mkdir -p /config/tvheadend/wg++
+  mkdir /config/tvheadend/wg++
 fi
 
 expectedParentDir="/wg/.wg++/siteini.pack"
