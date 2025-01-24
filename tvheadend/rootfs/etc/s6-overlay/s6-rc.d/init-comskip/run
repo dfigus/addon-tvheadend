@@ -11,7 +11,7 @@ comskip_ini_content=$(bashio::config 'comskip_ini')
 
 if ! bashio::fs.directory_exists '/config/tvheadend/comskip'; then
     bashio::log.info "Creating comskip ini directory at /config/tvheadend/comskip"
-    mkdir -p /config/tvheadend/comskip
+    mkdir /config/tvheadend/comskip
 fi
 
 bashio::log.info "Updating comskip.ini"
