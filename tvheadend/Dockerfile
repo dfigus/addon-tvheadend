@@ -245,12 +245,12 @@ RUN \
 # install WebGrab+
 RUN \
    mkdir -p /wg/tmp \
-&& curl -o /wg/tmp/wg.tar.gz http://www.webgrabplus.com/sites/default/files/download/SW/V5.3.0/WebGrabPlus_V5.3_install.tar.gz \
+&& wget -q -O /wg/tmp/wg.tar.gz https://www.webgrabplus.com/sites/default/files/download/SW/V5.3.0/WebGrabPlus_V5.3_install.tar.gz \
 && tar -zxvf /wg/tmp/wg.tar.gz -C /wg \
 && /wg/.wg++/install.sh \
 && sed -i "s|<filename>guide.xml</filename>|<filename>/config/tvheadend/wg++/guide.xml</filename>|g" /wg/.wg++/WebGrab++.config.xml \
 && rm -rf /wg/tmp \
-&& curl -o /usr/bin/tv_grab_wg++ http://www.webgrabplus.com/sites/default/files/tv_grab_wg.txt \
+&& wget -q -O /usr/bin/tv_grab_wg++ https://www.webgrabplus.com/sites/default/files/tv_grab_wg.txt \
 && sed -i 's|~/.wg++/guide.xml|/config/tvheadend/wg++/guide.xml|g' /usr/bin/tv_grab_wg++ \
 && chmod +x /usr/bin/tv_grab_wg++
 
