@@ -54,6 +54,9 @@ fi
 # remove dummy channel from initial config xml
 xmlstarlet ed -L -d "/settings/channel" /wg/.wg++/WebGrab++.config.xml
 
+# remove license from initial config xml causing "Index was outside the bounds of the array." error
+xmlstarlet ed -L -d "/settings/license" /wg/.wg++/WebGrab++.config.xml
+
 if bashio::config.has_value 'wg_config'; then
   bashio::log.info "Using supplied WG++ config..."
   # Overwrite config file from addon config
