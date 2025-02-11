@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.7.1-r0	\
-    curl=8.12.0-r0 \
+    curl=8.11.1-r1 \
     bash=5.2.37-r0 \
     autoconf=2.72-r0 \
     automake=1.17-r0 \
@@ -46,7 +46,7 @@ RUN \
     libxml2-dev=2.13.4-r3 \
     libxslt-dev=1.1.42-r1 \
     linux-headers=6.6-r1 \
-    openssl-dev=3.3.2-r5 \
+    openssl-dev=3.3.2-r6 \
     opus-dev=1.5.2-r1 \
     patch=2.7.6-r10 \
     pcre2-dev=10.43-r0 \
