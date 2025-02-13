@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.7.1-r0	\
-    curl=8.11.1-r1 \
+    curl=8.12.1-r0 \
     bash=5.2.37-r0 \
     autoconf=2.72-r0 \
     automake=1.17-r0 \
@@ -169,7 +169,7 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-    musl-dev=1.2.5-r8 \
+    musl-dev=1.2.5-r9 \
     gcc=14.2.0-r4 \
     g++=14.2.0-r4 \
     libxml2-dev=2.13.4-r3 \
