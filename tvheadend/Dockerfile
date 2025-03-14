@@ -44,7 +44,7 @@ RUN \
     libva-dev=2.22.0-r1 \
     libvpx-dev=1.15.0-r0 \
     libxml2-dev=2.13.4-r5 \
-    libxslt-dev=1.1.42-r1 \
+    libxslt-dev=1.1.42-r2 \
     linux-headers=6.6-r1 \
     openssl-dev=3.3.3-r0 \
     opus-dev=1.5.2-r1 \
@@ -173,7 +173,7 @@ RUN \
     gcc=14.2.0-r4 \
     g++=14.2.0-r4 \
     libxml2-dev=2.13.4-r5 \
-    libxslt-dev=1.1.42-r1 \
+    libxslt-dev=1.1.42-r2 \
     python3-dev=3.12.9-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
@@ -193,7 +193,7 @@ RUN \
     libva=2.22.0-r1 \
     libvpx=1.15.0-r0 \
     libxml2=2.13.4-r5 \
-    libxslt=1.1.42-r1 \
+    libxslt=1.1.42-r2 \
     linux-headers=6.6-r1 \
     opus=1.5.2-r1	 \
     pcre2=10.43-r0	 \
@@ -209,7 +209,7 @@ RUN \
     xmltv=1.3.0-r1 \
     zlib=1.3.1-r2 \
     py3-pip=24.3.1-r0 \
-    libxslt=1.1.42-r1 \
+    libxslt=1.1.42-r2 \
     nginx=1.26.2-r4 \
     linux-firmware-other=20241210-r0 \
     dotnet8-runtime=8.0.13-r0 \
