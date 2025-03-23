@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.7.1-r0	\
-    curl=8.12.1-r0 \
+    curl=8.12.1-r1 \
     bash=5.2.37-r0 \
     autoconf=2.72-r0 \
     automake=1.17-r0 \
@@ -210,9 +210,9 @@ RUN \
     zlib=1.3.1-r2 \
     py3-pip=24.3.1-r0 \
     libxslt=1.1.42-r2 \
-    nginx=1.26.2-r4 \
+    nginx=1.26.3-r0 \
     linux-firmware-other=20241210-r0 \
-    dotnet8-runtime=8.0.13-r0 \
+    dotnet8-runtime=8.0.14-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
