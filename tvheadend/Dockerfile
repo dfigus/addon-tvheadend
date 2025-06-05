@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.8.0-r0	\
-    curl=8.14.0-r2 \
+    curl=8.14.1-r0 \
     bash=5.2.37-r0 \
     autoconf=2.72-r1 \
     automake=1.17-r1 \
@@ -52,7 +52,7 @@ RUN \
     pcre2-dev=10.43-r1 \
     pkgconf=2.4.3-r0 \
     pngquant=3.0.3-r0 \
-    python3=3.12.10-r1 \
+    python3=3.12.11-r0 \
     sdl2-dev=2.32.6-r0 \
     uriparser-dev=0.9.8-r1 \
     x264-dev=0.164.3108-r0 \
