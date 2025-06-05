@@ -5,7 +5,7 @@ FROM alpine:3.22 AS builder
 
 # package versions
 ARG ARGTABLE_VER="2.13"
-ARG TVHEADEND_COMMIT="0f74b0ab0a3b96d87da04d9c778142ecfb370a1d"
+ARG TVHEADEND_COMMIT="808a87a6aa6eeabd4be3a024e4eea023aaf00cf6"
 ARG COMSKIP_COMMIT="a140b6ac8bc8f596729e9052819affc779c3b377"
 ARG COMCHAP_COMMIT="dd7db30c258e965f282ac78825971dd0703a031e"
 
@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.8.0-r0	\
-    curl=8.14.0-r2 \
+    curl=8.14.1-r0 \
     bash=5.2.37-r0 \
     autoconf=2.72-r1 \
     automake=1.17-r1 \
@@ -52,7 +52,7 @@ RUN \
     pcre2-dev=10.43-r1 \
     pkgconf=2.4.3-r0 \
     pngquant=3.0.3-r0 \
-    python3=3.12.10-r1 \
+    python3=3.12.11-r0 \
     sdl2-dev=2.32.6-r0 \
     uriparser-dev=0.9.8-r1 \
     x264-dev=0.164.3108-r0 \
