@@ -174,7 +174,7 @@ RUN \
     g++=14.2.0-r4 \
     libxml2-dev=2.13.4-r6 \
     libxslt-dev=1.1.42-r2 \
-    python3-dev=3.12.10-r1 \
+    python3-dev=3.12.11-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg4=4.4.5-r1 \
@@ -202,7 +202,7 @@ RUN \
     perl-json=4.10-r1 \
     perl-json-xs=4.03-r5 \
     py3-requests=2.32.3-r0 \
-    python3=3.12.10-r1 \
+    python3=3.12.11-r0 \
     uriparser=0.9.8-r0 \
     x264=0.164.3108-r0 \
     x265=3.6-r0 \
