@@ -201,7 +201,7 @@ RUN \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
     perl-json-xs=4.03-r5 \
-    py3-requests=2.32.3-r0 \
+    py3-requests=2.32.4-r0 \
     python3=3.12.11-r0 \
     uriparser=0.9.8-r0 \
     x264=0.164.3108-r0 \
