@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.8.0-r0	\
-    curl=8.14.1-r0 \
+    curl=8.14.1-r1 \
     bash=5.2.37-r0 \
     autoconf=2.72-r1 \
     automake=1.17-r1 \
@@ -35,7 +35,7 @@ RUN \
     file=5.46-r2 \
     findutils=4.10.0-r0 \
     gettext-dev=0.24.1-r0 \
-    git=2.49.0-r0 \
+    git=2.49.1-r0 \
     gnu-libiconv-dev=1.17-r2 \
     libdvbcsa-dev=1.1.0-r1 \
     libgcrypt-dev=1.10.3-r1	\
@@ -46,14 +46,14 @@ RUN \
     libxml2-dev=2.13.8-r0 \
     libxslt-dev=1.1.43-r3 \
     linux-headers=6.14.2-r0 \
-    openssl-dev=3.5.0-r0 \
+    openssl-dev=3.5.1-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
     pcre2-dev=10.43-r1 \
     pkgconf=2.4.3-r0 \
     pngquant=3.0.3-r0 \
     python3=3.12.11-r0 \
-    sdl2-dev=2.32.6-r0 \
+    sdl2-dev=2.32.8-r0 \
     uriparser-dev=0.9.8-r1 \
     x264-dev=0.164.3108-r0 \
     x265-dev=3.6-r0 \
