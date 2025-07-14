@@ -162,7 +162,7 @@ RUN \
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-ARG PICONS_RELEASE="2025-07-02--13-18-25"
+ARG PICONS_RELEASE="2025-07-11--23-01-16"
 
 COPY requirements.txt /tmp/
 
