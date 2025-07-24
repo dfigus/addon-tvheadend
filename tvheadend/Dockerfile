@@ -189,7 +189,7 @@ RUN \
     ffmpeg4-libswscale=4.4.5-r1 \
     gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
-    libhdhomerun-libs=20200225-r1 \
+    libhdhomerun-libs=20231109-r0 \
     libva=2.22.0-r1 \
     libvpx=1.15.0-r0 \
     libxml2=2.13.4-r6 \
@@ -208,10 +208,10 @@ RUN \
     x265=3.6-r0 \
     xmltv=1.3.0-r1 \
     zlib=1.3.1-r2 \
-    py3-pip=24.3.1-r0 \
+    py3-pip=25.1.1-r0 \
     libxslt=1.1.42-r2 \
     nginx=1.26.3-r0 \
-    linux-firmware-other=20241210-r0 \
+    linux-firmware-other=20250509-r0 \
     dotnet8-runtime=8.0.16-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
