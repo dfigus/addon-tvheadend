@@ -5,7 +5,7 @@ FROM alpine:3.22 AS builder
 
 # package versions
 ARG ARGTABLE_VER="2.13"
-ARG TVHEADEND_COMMIT="f1c460feba34491d473c60216bd35eccc73c178e"
+ARG TVHEADEND_COMMIT="5fd594910abbff1091e11b606124905a1cc92bb6"
 ARG COMSKIP_COMMIT="a140b6ac8bc8f596729e9052819affc779c3b377"
 ARG COMCHAP_COMMIT="dd7db30c258e965f282ac78825971dd0703a031e"
 
@@ -46,7 +46,7 @@ RUN \
     libxml2-dev=2.13.8-r0 \
     libxslt-dev=1.1.43-r3 \
     linux-headers=6.14.2-r0 \
-    openssl-dev=3.5.2-r0 \
+    openssl-dev=3.5.3-r1 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
     pcre2-dev=10.43-r1 \
@@ -104,6 +104,7 @@ RUN \
     --enable-libav \
     --enable-pngquant \
     --enable-trace \
+    --enable-debugging \
     --enable-vaapi \
     --infodir=/usr/share/info \
     --localstatedir=/var \
@@ -171,14 +172,14 @@ RUN \
     && apk add --no-cache --virtual .build-deps \
     musl-dev=1.2.5-r10 \
     gcc=14.2.0-r6 \
-    g++=14.2.0-r4 \
+    g++=14.2.0-r6 \
     libxml2-dev=2.13.8-r0 \
     libxslt-dev=1.1.43-r3 \
     python3-dev=3.12.11-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg4=4.4.5-r1 \
-    ffmpeg=6.1.2-r2	\
+    # ffmpeg=6.1.2-r2	\
     ffmpeg4-libavcodec=4.4.5-r1 \
     ffmpeg4-libavdevice=4.4.5-r1 \
     ffmpeg4-libavfilter=4.4.5-r1 \
@@ -200,24 +201,19 @@ RUN \
     perl=5.40.3-r0	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
-    perl-json-xs=4.03-r5 \
-    py3-requests=2.32.4-r0 \
+    perl-json-xs=4.04-r0 \
+    py3-requests=2.32.5-r0 \
     python3=3.12.11-r0 \
     uriparser=0.9.8-r1 \
     x264=0.164.3108-r0 \
     x265=3.6-r0 \
     xmltv=1.3.0-r1 \
     zlib=1.3.1-r2 \
-    py3-pip=24.3.1-r0 \
     libxslt=1.1.43-r3 \
     nginx=1.28.0-r3 \
-    linux-firmware-other=20241210-r0 \
-    dotnet8-runtime=8.0.19-r0 \
+    dotnet8-runtime=8.0.20-r0 \
     py3-pip=25.1.1-r0 \
-    libxslt=1.1.42-r2 \
-    nginx=1.26.3-r0 \
     linux-firmware-other=20250509-r0 \
-    dotnet8-runtime=8.0.16-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
