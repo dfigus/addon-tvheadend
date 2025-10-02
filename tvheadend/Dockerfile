@@ -22,7 +22,7 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.8.0-r0	\
-    curl=8.14.1-r1 \
+    curl=8.14.1-r2 \
     bash=5.2.37-r0 \
     autoconf=2.72-r1 \
     automake=1.17-r1 \
