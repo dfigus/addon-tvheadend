@@ -39,6 +39,7 @@ RUN \
     gnu-libiconv-dev=1.17-r2 \
     libdvbcsa-dev=1.1.0-r1 \
     libgcrypt-dev=1.10.3-r1	\
+    libhdhomerun-dev=20231109-r1 \
     libtool=2.5.4-r1 \
     libva-dev=2.22.0-r1 \
     libvpx-dev=1.15.0-r0 \
@@ -57,10 +58,6 @@ RUN \
     x264-dev=0.164.3108-r0 \
     x265-dev=3.6-r0 \
     zlib-dev=1.3.1-r2
-
-    # install previous version of libhdhomerun-dev due to signal 4 (illegal instruction) on TVHeadend startup with latest version
-RUN \
-    apk add --repository=https://dl-cdn.alpinelinux.org/alpine/v3.21/community --no-cache libhdhomerun-dev=20200225-r1
 
 RUN \
     echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
@@ -182,7 +179,7 @@ RUN \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg4=4.4.5-r1 \
-    # ffmpeg=6.1.2-r2	\
+    ffmpeg=6.1.2-r2	\
     ffmpeg4-libavcodec=4.4.5-r1 \
     ffmpeg4-libavdevice=4.4.5-r1 \
     ffmpeg4-libavfilter=4.4.5-r1 \
@@ -193,7 +190,7 @@ RUN \
     ffmpeg4-libswscale=4.4.5-r1 \
     gnu-libiconv=1.17-r2 \
     libdvbcsa=1.1.0-r1 \
-    # libhdhomerun-libs=20231109-r0 \
+    libhdhomerun-libs=20231109-r1 \
     libva=2.22.0-r1 \
     libvpx=1.15.0-r0 \
     libxml2=2.13.9-r0 \
@@ -223,10 +220,6 @@ RUN \
     --prefer-binary \
     -r /tmp/requirements.txt \
     && apk del --no-cache --purge .build-deps
-
-    # install previous version of libhdhomerun-libs due to signal 4 (illegal instruction) on TVHeadend startup with latest version
-RUN \
-    apk add --repository=https://dl-cdn.alpinelinux.org/alpine/v3.21/community --no-cache libhdhomerun-libs=20200225-r1
 
 COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
