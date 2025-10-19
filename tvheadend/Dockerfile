@@ -49,7 +49,7 @@ RUN \
     openssl-dev=3.5.4-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
-    pcre2-dev=10.43-r1 \
+    pcre2-dev=10.46-r0 \
     pkgconf=2.4.3-r0 \
     pngquant=3.0.3-r0 \
     python3=3.12.12-r0 \
@@ -197,7 +197,7 @@ RUN \
     libxslt=1.1.43-r3 \
     linux-headers=6.14.2-r0 \
     opus=1.5.2-r1	 \
-    pcre2=10.43-r1	 \
+    pcre2=10.46-r0	 \
     perl=5.40.3-r0	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
