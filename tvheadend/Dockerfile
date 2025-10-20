@@ -231,14 +231,18 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN \
   mkdir -p /picons/tmp \
-  mkdir /picons/snp \
-  mkdir /picons/srp \
+           /picons/snp \
+           /picons/utf8snp \
+           /picons/srp \
+# download picons 2025-10-11--01-02-12 as those were the last one containing non utf8 picons, afterwards only utf8 picons were released
+  && wget https://github.com/picons/picons/releases/download/2025-10-11--01-02-12/snp-full.220x132-190x102.light.on.transparent_2025-10-11--01-02-12.symlink.tar.xz -O /picons/tmp/snp.tar.xz -q \
   && curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/picons/picons/releases/tags/"${PICONS_RELEASE}" > /picons/tmp/release.json \
-  && jq -r '.assets[] | select(.name | test("^snp-full\\.220x132-190x102\\.light\\.on\\.transparent.*symlink\\.tar\\.xz$")) | .browser_download_url' /picons/tmp/release.json | xargs wget -O /picons/tmp/snp.tar.xz \
+  && jq -r '.assets[] | select(.name | test("^utf8snp-full\\.220x132-190x102\\.light\\.on\\.transparent.*symlink\\.tar\\.xz$")) | .browser_download_url' /picons/tmp/release.json | xargs wget -O /picons/tmp/utf8snp.tar.xz \
   && jq -r '.assets[] | select(.name | test("^srp-full\\.220x132-190x102\\.light\\.on\\.transparent.*symlink\\.tar\\.xz$")) | .browser_download_url' /picons/tmp/release.json | xargs wget -O /picons/tmp/srp.tar.xz \
+  && tar xfJ /picons/tmp/utf8snp.tar.xz -C /picons/snp --strip-components=1 \
   && tar xfJ /picons/tmp/snp.tar.xz -C /picons/snp --strip-components=1 \
   && tar xfJ /picons/tmp/srp.tar.xz -C /picons/srp --strip-components=1 \
   && rm -rf /picons/tmp
