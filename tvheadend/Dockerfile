@@ -46,7 +46,7 @@ RUN \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
     linux-headers=6.14.2-r0 \
-    openssl-dev=3.5.4-r0 \
+    openssl-dev=3.5.5-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
     pcre2-dev=10.46-r0 \
@@ -210,8 +210,8 @@ RUN \
     xmltv=1.3.0-r1 \
     zlib=1.3.1-r2 \
     libxslt=1.1.43-r3 \
-    nginx=1.28.0-r3 \
-    dotnet8-runtime=8.0.22-r0 \
+    nginx=1.28.2-r0 \
+    dotnet8-runtime=8.0.24-r0 \
     py3-pip=25.1.1-r0 \
     linux-firmware-other=20250509-r0 \
     xmlstarlet=1.6.1-r2 \
