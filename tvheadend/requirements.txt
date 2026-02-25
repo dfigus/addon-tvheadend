@@ -1,2 +1,2 @@
 setuptools==80.10.2
-streamlink==8.1.2
+streamlink==8.2.0
