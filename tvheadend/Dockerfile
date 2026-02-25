@@ -28,7 +28,7 @@ RUN \
     automake=1.18.1-r0 \
     bsd-compat-headers=0.7.2-r6 \
     build-base=0.5-r3 \
-    cmake=3.31.7-r1 \
+    cmake=4.1.3-r0 \
     coreutils=9.8-r1 \
     dbus-dev=1.16.2-r1 \
     ffmpeg4-dev=4.4.5-r1 \
@@ -56,7 +56,7 @@ RUN \
     sdl2-dev=2.32.10-r0 \
     uriparser-dev=0.9.9-r0 \
     x264-dev=0.164.3108-r1 \
-    x265-dev=3.6-r0 \
+    x265-dev=4.1-r0 \
     zlib-dev=1.3.1-r2
 
 RUN \
@@ -171,7 +171,7 @@ RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
     musl-dev=1.2.5-r21 \
-    gcc=14.2.0-r6 \
+    gcc=15.2.0-r2 \
     g++=14.2.0-r6 \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
@@ -179,7 +179,7 @@ RUN \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg4=4.4.5-r1 \
-    ffmpeg=6.1.2-r2	\
+    ffmpeg=8.0.1-r1	\
     ffmpeg4-libavcodec=4.4.5-r1 \
     ffmpeg4-libavdevice=4.4.5-r1 \
     ffmpeg4-libavfilter=4.4.5-r1 \
@@ -206,7 +206,7 @@ RUN \
     python3=3.12.12-r0 \
     uriparser=0.9.9-r0 \
     x264=0.164.3108-r1 \
-    x265=3.6-r0 \
+    x265=4.1-r0 \
     xmltv=1.4.0-r1 \
     zlib=1.3.1-r2 \
     libxslt=1.1.43-r3 \
