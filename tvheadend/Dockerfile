@@ -39,7 +39,7 @@ RUN \
     gnu-libiconv-dev=1.18-r0 \
     libdvbcsa-dev=1.1.0-r1 \
     libgcrypt-dev=1.11.2-r0	\
-    libhdhomerun-dev=20231109-r1 \
+    libhdhomerun-dev=20250815-r0 \
     libtool=2.5.4-r2 \
     libva-dev=2.22.0-r1 \
     libvpx-dev=1.15.2-r1 \
