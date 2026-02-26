@@ -26,6 +26,8 @@ RUN \
     bash=5.3.3-r1 \
     autoconf=2.72-r1 \
     automake=1.18.1-r0 \
+    argtable2=2.13-r0 \
+    argtable2-dev=2.13-r0 \
     bsd-compat-headers=0.7.2-r6 \
     build-base=0.5-r3 \
     cmake=4.1.3-r0 \
@@ -116,30 +118,6 @@ RUN \
     make DESTDIR=/tmp/tvheadend-build install
 
 RUN \
-    echo "**** compile argtable2 ****" && \
-    ARGTABLE_VER1="${ARGTABLE_VER//./-}" && \
-    mkdir -p \
-    /tmp/argtable && \
-    curl -s -o \
-    /tmp/argtable-src.tar.gz -L \
-    "https://sourceforge.net/projects/argtable/files/argtable/argtable-${ARGTABLE_VER}/argtable${ARGTABLE_VER1}.tar.gz" && \
-    tar xf \
-    /tmp/argtable-src.tar.gz -C \
-    /tmp/argtable --strip-components=1 && \
-    cp /tmp/argtable2_config/config.* /tmp/argtable && \
-    cd /tmp/argtable && \
-    cp /tmp/argtable2_config/*.patch /tmp/argtable && \
-    patch -p1 < fix-implicit-function-declaration.patch && \
-    patch -p1 < fix-undeclared-library-function.patch && \
-    ./configure \
-    --prefix=/usr && \
-    make -j 2 && \
-    make check && \
-    make DESTDIR=/tmp/argtable-build install && \
-    echo "**** copy to /usr for comskip dependency ****" && \
-    cp -pr /tmp/argtable-build/usr/* /usr/
-
-RUN \
     echo "***** compile comskip ****" && \
     git clone https://github.com/erikkaashoek/Comskip /tmp/comskip && \
     cd /tmp/comskip && \
@@ -170,6 +148,7 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
+    argtable2=2.13-r0 \
     musl-dev=1.2.5-r21 \
     gcc=15.2.0-r2 \
     g++=15.2.0-r2 \
@@ -220,7 +199,6 @@ RUN \
     -r /tmp/requirements.txt \
     && apk del --no-cache --purge .build-deps
 
-COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
 COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
 COPY --from=builder /tmp/comchap/comchap /usr/bin/comchap
