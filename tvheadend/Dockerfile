@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM alpine:3.22 AS builder
+FROM alpine:3.23 AS builder
 ############## builder ##############
 
 # package versions
@@ -22,41 +22,43 @@ RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
     jq=1.8.1-r0	\
-    curl=8.14.1-r2 \
-    bash=5.2.37-r0 \
+    curl=8.17.0-r1 \
+    bash=5.3.3-r1 \
     autoconf=2.72-r1 \
-    automake=1.17-r1 \
+    automake=1.18.1-r0 \
+    argtable2=2.13-r0 \
+    argtable2-dev=2.13-r0 \
     bsd-compat-headers=0.7.2-r6 \
     build-base=0.5-r3 \
-    cmake=3.31.7-r1 \
-    coreutils=9.7-r1 \
+    cmake=4.1.3-r0 \
+    coreutils=9.8-r1 \
     dbus-dev=1.16.2-r1 \
-    ffmpeg4-dev=4.4.5-r1 \
+    ffmpeg6-dev=6.1.2-r12 \
     file=5.46-r2 \
     findutils=4.10.0-r0 \
-    gettext-dev=0.24.1-r0 \
-    git=2.49.1-r0 \
-    gnu-libiconv-dev=1.17-r2 \
+    gettext-dev=0.24.1-r1 \
+    git=2.52.0-r0 \
+    gnu-libiconv-dev=1.18-r0 \
     libdvbcsa-dev=1.1.0-r1 \
-    libgcrypt-dev=1.10.3-r1	\
-    libhdhomerun-dev=20231109-r1 \
-    libtool=2.5.4-r1 \
+    libgcrypt-dev=1.11.2-r0	\
+    libhdhomerun-dev=20250815-r0 \
+    libtool=2.5.4-r2 \
     libva-dev=2.22.0-r1 \
-    libvpx-dev=1.15.0-r0 \
+    libvpx-dev=1.15.2-r1 \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
-    linux-headers=6.14.2-r0 \
+    linux-headers=6.16.12-r0 \
     openssl-dev=3.5.5-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
-    pcre2-dev=10.46-r0 \
-    pkgconf=2.4.3-r0 \
+    pcre2-dev=10.47-r0 \
+    pkgconf=2.5.1-r0 \
     pngquant=3.0.3-r0 \
     python3=3.12.12-r0 \
-    sdl2-dev=2.32.8-r0 \
-    uriparser-dev=0.9.8-r1 \
-    x264-dev=0.164.3108-r0 \
-    x265-dev=3.6-r0 \
+    sdl2-dev=2.32.10-r0 \
+    uriparser-dev=0.9.9-r0 \
+    x264-dev=0.164.3108-r1 \
+    x265-dev=4.1-r0 \
     zlib-dev=1.3.1-r2
 
 RUN \
@@ -116,30 +118,6 @@ RUN \
     make DESTDIR=/tmp/tvheadend-build install
 
 RUN \
-    echo "**** compile argtable2 ****" && \
-    ARGTABLE_VER1="${ARGTABLE_VER//./-}" && \
-    mkdir -p \
-    /tmp/argtable && \
-    curl -s -o \
-    /tmp/argtable-src.tar.gz -L \
-    "https://sourceforge.net/projects/argtable/files/argtable/argtable-${ARGTABLE_VER}/argtable${ARGTABLE_VER1}.tar.gz" && \
-    tar xf \
-    /tmp/argtable-src.tar.gz -C \
-    /tmp/argtable --strip-components=1 && \
-    cp /tmp/argtable2_config/config.* /tmp/argtable && \
-    cd /tmp/argtable && \
-    cp /tmp/argtable2_config/*.patch /tmp/argtable && \
-    patch -p1 < fix-implicit-function-declaration.patch && \
-    patch -p1 < fix-undeclared-library-function.patch && \
-    ./configure \
-    --prefix=/usr && \
-    make -j 2 && \
-    make check && \
-    make DESTDIR=/tmp/argtable-build install && \
-    echo "**** copy to /usr for comskip dependency ****" && \
-    cp -pr /tmp/argtable-build/usr/* /usr/
-
-RUN \
     echo "***** compile comskip ****" && \
     git clone https://github.com/erikkaashoek/Comskip /tmp/comskip && \
     cd /tmp/comskip && \
@@ -170,50 +148,50 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-    musl-dev=1.2.5-r10 \
-    gcc=14.2.0-r6 \
-    g++=14.2.0-r6 \
+    argtable2=2.13-r0 \
+    musl-dev=1.2.5-r21 \
+    gcc=15.2.0-r2 \
+    g++=15.2.0-r2 \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
     python3-dev=3.12.12-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg4=4.4.5-r1 \
-    ffmpeg=6.1.2-r2	\
-    ffmpeg4-libavcodec=4.4.5-r1 \
-    ffmpeg4-libavdevice=4.4.5-r1 \
-    ffmpeg4-libavfilter=4.4.5-r1 \
-    ffmpeg4-libavformat=4.4.5-r1 \
-    ffmpeg4-libavutil=4.4.5-r1 \
-    ffmpeg4-libpostproc=4.4.5-r1 \
-    ffmpeg4-libswresample=4.4.5-r1 \
-    ffmpeg4-libswscale=4.4.5-r1 \
-    gnu-libiconv=1.17-r2 \
+    ffmpeg6=6.1.2-r12 \
+    ffmpeg6-libavcodec=6.1.2-r12 \
+    ffmpeg6-libavdevice=6.1.2-r12 \
+    ffmpeg6-libavfilter=6.1.2-r12 \
+    ffmpeg6-libavformat=6.1.2-r12 \
+    ffmpeg6-libavutil=6.1.2-r12 \
+    ffmpeg6-libpostproc=6.1.2-r12 \
+    ffmpeg6-libswresample=6.1.2-r12 \
+    ffmpeg6-libswscale=6.1.2-r12 \
+    gnu-libiconv=1.18-r0 \
     libdvbcsa=1.1.0-r1 \
-    libhdhomerun-libs=20231109-r1 \
+    libhdhomerun-libs=20250815-r0 \
     libva=2.22.0-r1 \
-    libvpx=1.15.0-r0 \
+    libvpx=1.15.2-r1 \
     libxml2=2.13.9-r0 \
     libxslt=1.1.43-r3 \
-    linux-headers=6.14.2-r0 \
+    linux-headers=6.16.12-r0 \
     opus=1.5.2-r1	 \
-    pcre2=10.46-r0	 \
-    perl=5.40.3-r0	 \
+    pcre2=10.47-r0	 \
+    perl=5.42.0-r0	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r0 \
     py3-requests=2.32.5-r0 \
     python3=3.12.12-r0 \
-    uriparser=0.9.8-r1 \
-    x264=0.164.3108-r0 \
-    x265=3.6-r0 \
-    xmltv=1.3.0-r1 \
+    uriparser=0.9.9-r0 \
+    x264=0.164.3108-r1 \
+    x265=4.1-r0 \
+    xmltv=1.4.0-r1 \
     zlib=1.3.1-r2 \
     libxslt=1.1.43-r3 \
-    nginx=1.28.2-r0 \
+    nginx=1.28.2-r1 \
     dotnet8-runtime=8.0.24-r0 \
-    py3-pip=25.1.1-r0 \
-    linux-firmware-other=20250509-r0 \
+    py3-pip=25.1.1-r1 \
+    linux-firmware-other=20251125-r1 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
@@ -221,7 +199,6 @@ RUN \
     -r /tmp/requirements.txt \
     && apk del --no-cache --purge .build-deps
 
-COPY --from=builder /tmp/argtable-build/usr/ /usr/
 COPY --from=builder /tmp/comskip-build/usr/ /usr/
 COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
 COPY --from=builder /tmp/comchap/comchap /usr/bin/comchap
