@@ -189,7 +189,7 @@ RUN \
     ffmpeg6-libswscale=6.1.2-r12 \
     gnu-libiconv=1.18-r0 \
     libdvbcsa=1.1.0-r1 \
-    libhdhomerun-libs=20231109-r1 \
+    libhdhomerun-libs=20250815-r0 \
     libva=2.22.0-r1 \
     libvpx=1.15.2-r1 \
     libxml2=2.13.9-r0 \
@@ -212,7 +212,7 @@ RUN \
     nginx=1.28.2-r1 \
     dotnet8-runtime=8.0.24-r0 \
     py3-pip=25.1.1-r1 \
-    linux-firmware-other=20250509-r0 \
+    linux-firmware-other=20251125-r1 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
     --no-cache-dir \
