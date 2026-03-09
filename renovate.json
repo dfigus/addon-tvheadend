@@ -8,7 +8,7 @@
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "extends": [],
+  "extends": ["helpers:pinGitHubActionDigests"],
   "customManagers": [
     {
       "customType": "regex",
@@ -112,6 +112,16 @@
     },
     {
       "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["github_actions"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
