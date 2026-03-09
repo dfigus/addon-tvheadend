@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/lock.yaml@6fc3bc2b7ad4b7ae3dcf68d644d6e3a792eda831
+    uses: hassio-addons/workflows/.github/workflows/lock.yaml@v2.0.5
