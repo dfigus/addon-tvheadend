@@ -189,7 +189,7 @@ RUN \
     zlib=1.3.2-r0 \
     libxslt=1.1.43-r3 \
     nginx=1.28.2-r1 \
-    dotnet8-runtime=8.0.24-r0 \
+    dotnet8-runtime=8.0.25-r0 \
     py3-pip=25.1.1-r1 \
     linux-firmware-other=20251125-r1 \
     xmlstarlet=1.6.1-r2 \
