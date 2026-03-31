@@ -176,7 +176,7 @@ RUN \
     linux-headers=6.16.12-r0 \
     opus=1.5.2-r1	 \
     pcre2=10.47-r0	 \
-    perl=5.42.0-r0	 \
+    perl=5.42.1-r0	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r0 \
@@ -188,7 +188,7 @@ RUN \
     xmltv=1.4.0-r1 \
     zlib=1.3.2-r0 \
     libxslt=1.1.43-r3 \
-    nginx=1.28.2-r1 \
+    nginx=1.28.3-r0 \
     dotnet8-runtime=8.0.25-r0 \
     py3-pip=25.1.1-r1 \
     linux-firmware-other=20251125-r1 \
