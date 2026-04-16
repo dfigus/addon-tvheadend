@@ -48,13 +48,13 @@ RUN \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
     linux-headers=6.16.12-r0 \
-    openssl-dev=3.5.5-r0 \
+    openssl-dev=3.5.6-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
     pcre2-dev=10.47-r0 \
     pkgconf=2.5.1-r0 \
     pngquant=3.0.3-r0 \
-    python3=3.12.12-r0 \
+    python3=3.12.13-r0 \
     sdl2-dev=2.32.10-r0 \
     uriparser-dev=0.9.9-r0 \
     x264-dev=0.164.3108-r1 \
@@ -149,12 +149,12 @@ RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
     argtable2=2.13-r0 \
-    musl-dev=1.2.5-r21 \
+    musl-dev=1.2.5-r23 \
     gcc=15.2.0-r2 \
     g++=15.2.0-r2 \
     libxml2-dev=2.13.9-r0 \
     libxslt-dev=1.1.43-r3 \
-    python3-dev=3.12.12-r0 \
+    python3-dev=3.12.13-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg6=6.1.2-r12 \
@@ -181,7 +181,7 @@ RUN \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r0 \
     py3-requests=2.32.5-r0 \
-    python3=3.12.12-r0 \
+    python3=3.12.13-r0 \
     uriparser=0.9.9-r0 \
     x264=0.164.3108-r1 \
     x265=4.1-r0 \
@@ -189,7 +189,7 @@ RUN \
     zlib=1.3.2-r0 \
     libxslt=1.1.43-r3 \
     nginx=1.28.3-r0 \
-    dotnet8-runtime=8.0.25-r0 \
+    dotnet8-runtime=8.0.26-r0 \
     py3-pip=25.1.1-r1 \
     linux-firmware-other=20251125-r1 \
     xmlstarlet=1.6.1-r2 \
