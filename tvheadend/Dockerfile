@@ -48,7 +48,7 @@ RUN \
     libxml2-dev=2.13.9-r1 \
     libxslt-dev=1.1.43-r3 \
     linux-headers=6.16.12-r0 \
-    openssl-dev=3.5.6-r0 \
+    openssl-dev=3.5.7-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
     pcre2-dev=10.47-r0 \
