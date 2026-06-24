@@ -188,7 +188,7 @@ RUN \
     xmltv=1.4.0-r1 \
     zlib=1.3.2-r0 \
     libxslt=1.1.43-r3 \
-    nginx=1.28.3-r3 \
+    nginx=1.28.3-r4 \
     dotnet8-runtime=8.0.27-r0 \
     py3-pip=25.1.1-r1 \
     linux-firmware-other=20251125-r1 \
