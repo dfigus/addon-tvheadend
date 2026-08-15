@@ -54,7 +54,7 @@ RUN \
     pcre2-dev=10.47-r0 \
     pkgconf=2.5.1-r0 \
     pngquant=3.0.3-r0 \
-    python3=3.12.13-r0 \
+    python3=3.12.14-r0 \
     sdl2-dev=2.32.10-r0 \
     uriparser-dev=0.9.9-r0 \
     x264-dev=0.164.3108-r1 \
@@ -154,7 +154,7 @@ RUN \
     g++=15.2.0-r2 \
     libxml2-dev=2.13.9-r1 \
     libxslt-dev=1.1.43-r3 \
-    python3-dev=3.12.13-r0 \
+    python3-dev=3.12.14-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg6=6.1.4-r0 \
@@ -181,7 +181,7 @@ RUN \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r0 \
     py3-requests=2.33.1-r0 \
-    python3=3.12.13-r0 \
+    python3=3.12.14-r0 \
     uriparser=0.9.9-r0 \
     x264=0.164.3108-r1 \
     x265=4.1-r0 \
