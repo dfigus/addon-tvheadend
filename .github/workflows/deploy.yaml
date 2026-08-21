@@ -14,7 +14,7 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/app-deploy.yaml@383c10d83acbe341acbb35a4a61bfd14827f00f0 # v3.0.0
+    uses: hassio-addons/workflows/.github/workflows/app-deploy.yaml@e0c532a7b0fb264b3ff0c718c2c0308a0c8c1390 # v4.0.0
     with:
       repository: "hassio-addons"
       repository_edge: "hassio-addons-edge"
