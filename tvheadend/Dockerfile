@@ -21,7 +21,7 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache \
-    jq=1.8.1-r0	\
+    jq=1.8.2-r0	\
     curl=8.20.0-r0 \
     bash=5.3.3-r1 \
     autoconf=2.72-r1 \
@@ -51,7 +51,7 @@ RUN \
     openssl-dev=3.5.8-r0 \
     opus-dev=1.5.2-r1 \
     patch=2.8-r0 \
-    pcre2-dev=10.47-r0 \
+    pcre2-dev=10.48-r0 \
     pkgconf=2.5.1-r0 \
     pngquant=3.0.3-r0 \
     python3=3.12.14-r0 \
@@ -175,7 +175,7 @@ RUN \
     libxslt=1.1.43-r3 \
     linux-headers=6.16.12-r0 \
     opus=1.5.2-r1	 \
-    pcre2=10.47-r0	 \
+    pcre2=10.48-r0	 \
     perl=5.42.2-r0	 \
     perl-datetime-format-strptime=1.79-r1 \
     perl-json=4.10-r1 \
