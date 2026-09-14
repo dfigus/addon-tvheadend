@@ -28,8 +28,9 @@
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
-      "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_23/{{package}}"
+      "datasourceTemplate": "apk",
+      "depNameTemplate": "{{package}}",
+      "registryUrlTemplate": "https://dl-cdn.alpinelinux.org/alpine?branch=v3.23&components=main,community&arch=x86_64"
     },
     {
       "customType": "regex",
@@ -91,7 +92,7 @@
       "automergeSchedule": ["on saturday"]
     },
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["apk"],
       "groupName": "Alpine packages",
       "automerge": true
     },
