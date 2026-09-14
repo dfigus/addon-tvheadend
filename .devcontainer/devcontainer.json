@@ -1,13 +1,16 @@
 {
   "name": "Devcontainer for TVHeadend add-on",
-  "image": "ghcr.io/home-assistant/devcontainer:addons",
+  "image": "ghcr.io/home-assistant/devcontainer:6-apps",
+  "overrideCommand": false,
+  "remoteUser": "vscode",
   "appPort": ["7123:8123", "7357:4357", "9981:9981"],
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
   "workspaceFolder": "/mnt/supervisor/addons/local/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
   "containerEnv": {
-    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}",
+    "SUPERVISOR_CHANNEL": "beta"
   },
   "customizations": {
     "vscode": {
@@ -32,5 +35,10 @@
       }
     }
   },
-  "mounts": ["type=volume,target=/var/lib/docker"]
+  "mounts": [
+    "type=volume,target=/var/lib/docker",
+    "type=volume,target=/var/lib/containerd",
+    "type=volume,target=/mnt/supervisor",
+    "type=tmpfs,target=/tmp"
+  ]
 }
