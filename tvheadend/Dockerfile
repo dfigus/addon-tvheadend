@@ -1,5 +1,3 @@
-ARG BUILD_FROM
-
 FROM alpine:3.24 AS builder
 ############## builder ##############
 
@@ -138,8 +136,7 @@ RUN \
 
 ####### runtime ###########
 
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/base:latest
 
 ARG PICONS_RELEASE="2026-09-12--23-13-54"
 
