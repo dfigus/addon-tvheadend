@@ -30,7 +30,7 @@
       "versioningTemplate": "loose",
       "datasourceTemplate": "apk",
       "depNameTemplate": "{{package}}",
-      "registryUrlTemplate": "https://dl-cdn.alpinelinux.org/alpine?branch=v3.23&components=main,community&arch=x86_64"
+      "registryUrlTemplate": "https://dl-cdn.alpinelinux.org/alpine?branch=v3.24&components=main,community&arch=x86_64"
     },
     {
       "customType": "regex",
