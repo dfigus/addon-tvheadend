@@ -176,7 +176,7 @@ RUN \
     linux-headers=7.0.0-r1 \
     opus=1.6.1-r0	 \
     pcre2=10.48-r0	 \
-    perl=5.42.2-r0	 \
+    perl=5.42.2-r1	 \
     perl-datetime-format-strptime=1.80-r0 \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r1 \
