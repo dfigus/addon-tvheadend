@@ -51,10 +51,10 @@ RUN \
     openssl-dev=3.5.9-r0 \
     opus-dev=1.6.1-r0 \
     patch=2.8-r0 \
-    pcre2-dev=10.48-r0 \
+    pcre2-dev=10.49-r0 \
     pkgconf=2.5.1-r0 \
     pngquant=3.0.3-r0 \
-    python3=3.14.7-r1 \
+    python3=3.14.8-r0 \
     sdl2-dev=2.32.10-r0 \
     uriparser-dev=1.0.2-r0 \
     x264-dev=0.164.3108-r1 \
@@ -154,7 +154,7 @@ RUN \
     g++=15.2.0-r5 \
     libxml2-dev=2.13.9-r2 \
     libxslt-dev=1.1.43-r3 \
-    python3-dev=3.14.7-r1 \
+    python3-dev=3.14.8-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
     ffmpeg6=6.1.4-r2 \
@@ -175,13 +175,13 @@ RUN \
     libxslt=1.1.43-r3 \
     linux-headers=7.0.0-r1 \
     opus=1.6.1-r0	 \
-    pcre2=10.48-r0	 \
+    pcre2=10.49-r0	 \
     perl=5.42.2-r1	 \
     perl-datetime-format-strptime=1.80-r0 \
     perl-json=4.10-r1 \
     perl-json-xs=4.04-r1 \
     py3-requests=2.33.1-r0 \
-    python3=3.14.7-r1 \
+    python3=3.14.8-r0 \
     uriparser=1.0.2-r0 \
     x264=0.164.3108-r1 \
     x265=4.1-r0 \
