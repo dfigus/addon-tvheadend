@@ -59,7 +59,7 @@ RUN \
     uriparser-dev=1.0.2-r0 \
     x264-dev=0.164.3108-r1 \
     x265-dev=4.1-r0 \
-    zlib-dev=1.3.2-r0
+    zlib-dev=1.3.2-r1
 
 RUN \
     echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
@@ -186,7 +186,7 @@ RUN \
     x264=0.164.3108-r1 \
     x265=4.1-r0 \
     xmltv=1.4.0-r1 \
-    zlib=1.3.2-r0 \
+    zlib=1.3.2-r1 \
     libxslt=1.1.43-r3 \
     nginx=1.30.4-r1 \
     dotnet8-runtime=8.0.31-r0 \
