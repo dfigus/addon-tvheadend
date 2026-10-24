@@ -33,7 +33,7 @@ RUN \
     cmake=4.2.3-r0 \
     coreutils=9.11-r0 \
     dbus-dev=1.16.2-r2 \
-    ffmpeg6-dev=6.1.4-r2 \
+    ffmpeg6-dev=6.1.6-r0 \
     file=5.47-r2 \
     findutils=4.10.0-r1 \
     gettext-dev=1.0-r0 \
@@ -149,7 +149,7 @@ RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
     argtable2=2.13-r1 \
-    musl-dev=1.2.6-r2 \
+    musl-dev=1.2.6-r3 \
     gcc=15.2.0-r5 \
     g++=15.2.0-r5 \
     libxml2-dev=2.13.9-r2 \
@@ -157,15 +157,15 @@ RUN \
     python3-dev=3.14.8-r0 \
     && apk add --no-cache \
     bsd-compat-headers=0.7.2-r6 \
-    ffmpeg6=6.1.4-r2 \
-    ffmpeg6-libavcodec=6.1.4-r2 \
-    ffmpeg6-libavdevice=6.1.4-r2 \
-    ffmpeg6-libavfilter=6.1.4-r2 \
-    ffmpeg6-libavformat=6.1.4-r2 \
-    ffmpeg6-libavutil=6.1.4-r2 \
-    ffmpeg6-libpostproc=6.1.4-r2 \
-    ffmpeg6-libswresample=6.1.4-r2 \
-    ffmpeg6-libswscale=6.1.4-r2 \
+    ffmpeg6=6.1.6-r0 \
+    ffmpeg6-libavcodec=6.1.6-r0 \
+    ffmpeg6-libavdevice=6.1.6-r0 \
+    ffmpeg6-libavfilter=6.1.6-r0 \
+    ffmpeg6-libavformat=6.1.6-r0 \
+    ffmpeg6-libavutil=6.1.6-r0 \
+    ffmpeg6-libpostproc=6.1.6-r0 \
+    ffmpeg6-libswresample=6.1.6-r0 \
+    ffmpeg6-libswscale=6.1.6-r0 \
     gnu-libiconv=1.18-r0 \
     libdvbcsa=1.1.0-r2 \
     libhdhomerun-libs=20250815-r0 \
@@ -188,7 +188,7 @@ RUN \
     xmltv=1.4.0-r1 \
     zlib=1.3.2-r1 \
     libxslt=1.1.43-r3 \
-    nginx=1.30.4-r1 \
+    nginx=1.30.6-r0 \
     dotnet8-runtime=8.0.32-r0 \
     py3-pip=26.1.2-r0 \
     linux-firmware-other=20260519-r0 \
