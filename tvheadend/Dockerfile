@@ -45,7 +45,7 @@ RUN \
     libtool=2.6.0-r1 \
     libva-dev=2.23.0-r0 \
     libvpx-dev=1.15.2-r1 \
-    libxml2-dev=2.13.9-r2 \
+    libxml2-dev=2.13.9-r3 \
     libxslt-dev=1.1.43-r4 \
     linux-headers=7.0.0-r1 \
     openssl-dev=3.5.9-r1 \
@@ -152,7 +152,7 @@ RUN \
     musl-dev=1.2.6-r3 \
     gcc=15.2.0-r5 \
     g++=15.2.0-r5 \
-    libxml2-dev=2.13.9-r2 \
+    libxml2-dev=2.13.9-r3 \
     libxslt-dev=1.1.43-r4 \
     python3-dev=3.14.10-r1 \
     && apk add --no-cache \
@@ -171,7 +171,7 @@ RUN \
     libhdhomerun-libs=20250815-r0 \
     libva=2.23.0-r0 \
     libvpx=1.15.2-r1 \
-    libxml2=2.13.9-r2 \
+    libxml2=2.13.9-r3 \
     libxslt=1.1.43-r4 \
     linux-headers=7.0.0-r1 \
     opus=1.6.1-r0	 \
