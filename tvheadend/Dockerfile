@@ -190,7 +190,7 @@ RUN \
     libxslt=1.1.43-r4 \
     nginx=1.30.7-r0 \
     dotnet8-runtime=8.0.34-r0 \
-    py3-pip=26.1.2-r0 \
+    py3-pip=26.1.2-r1 \
     linux-firmware-other=20260519-r0 \
     xmlstarlet=1.6.1-r2 \
     && pip3 install \
