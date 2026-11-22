@@ -179,7 +179,7 @@ RUN \
     perl=5.42.3-r0	 \
     perl-datetime-format-strptime=1.80-r0 \
     perl-json=4.10-r1 \
-    perl-json-xs=4.04-r1 \
+    perl-json-xs=4.06-r0 \
     py3-requests=2.33.1-r0 \
     python3=3.14.10-r1 \
     uriparser=1.0.2-r0 \
